@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: e-Ukraine-light,serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.App {
+  /* background:linear-gradient(247.21deg,#8ce2b0 8.73%,#04aed5 90.64%); */
+  height: 100vh; 
+}
+.containetTest{
+  background:linear-gradient(247.21deg,#8ce2b0 8.73%,#04aed5 90.64%);
+  height: 100vh;
+  width: 100vw;
+ }
+.text-center{
+   position: absolute;
+   top: 30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.logo {
+  padding-top: 20px;
+}
+.buttonLs{
+  background:linear-gradient(247.21deg,#8ce2b0 8.73%,#04aed5 90.64%);
+  margin-left: 10px;
+  width: 200px;
+}
+.BtnContainer{
+  display: flex;
+  justify-content: flex-end;
+}
+.row{
+  width: 100%;
+ }
+ .navItem {
+   display: flex;
+   justify-content: flex-start;
+ 
+  
+  }
+ .navItem a{
+  color: #a1a4a8;
+  display: inline-block
+  
+ }
+ .checkbox{
+   padding-left: 10px;
+ }
+ .navItem a:visited{
+  color:white;
+   
+ }
+ .navItem a:hover{
+  color: #a1a4a8; }
+ .navItem1:hover{
+   background:rgba(58, 57, 57, 0.61);
+  
+ }
+ .sidebar {
+   padding-right: 0 !important;
+   height: 100vh;
+   background-color: rgb(30, 38, 44); 
+   border-color: rgb(30, 38, 44);
+   min-width: 256px;
+   height: 100vh;
+ }
+ .leftBar {
+   background: white;
+   height: auto;
+ }
+ img {
+  width: 100%;
+  height: auto;
+ }
+ .navItem1 {
+   display: flex;
+   justify-self: start;
+   padding-left: 17px;
+   padding-right: 0;
+   color:  #a1a4a8;
+   font-size: 15px;
+   min-height: 25px;
+   font-weight: 500;
+  }
+  .navTitle a {
+    padding-left:0;
+  }
+  .active{
+    color: white !important;
+  }
+ .navTitle{
+  font-size: 10px;
+  min-height: 15px;
+  font-weight: 500;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+ }
+.logoCheck {
+color: white;
+ padding-top: 25px;
+ padding-bottom: 25px;
+}
+.vertical {
+   border-bottom: 1px solid #32363f;
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+ .st0{
+  fill: white !important;
+ }
