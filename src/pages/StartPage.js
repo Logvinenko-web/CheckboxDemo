@@ -8,6 +8,13 @@ import Outlet from '../assets/image/outlet.png'
 import Kashier from '../assets/image/kashier.png'
 import Kass from '../assets/image/kass.png'
 import Sale from '../assets/image/sale.png'
+import Return from '../assets/image/return.png'
+import Check from '../assets/image/check.png'
+import Chenges from '../assets/image/chenges.png'
+import Goods from '../assets/image/goods.png'
+import Taxes from '../assets/image/taxes.png'
+import Gide from '../assets/image/gide.png'
+ 
  import {Link} from 'react-router-dom' 
 import {Context} from '../context/context'
 import { useEffect,useContext } from 'react';
@@ -16,7 +23,7 @@ export default function StartPage() {
    const {count, setCount, info, setInfo} = useContext(Context)
    
 const handleCountDecrement=()=>{
-    if (count<=3){
+    if (count<=9){
         setCount(count+1)
     }
     console.log(count)
@@ -59,6 +66,48 @@ useEffect(() => {
                text:'В даному меню можна відкрити зміну, внести або винести готівку, створити чек, сформувати x-звіт і в кінці дня закрити зміну(при закритті фвтоматично сформується z-звіт)', 
                image:Sale}
                )
+            
+         case 5: 
+         return setInfo({
+               title:'Повернення',
+               text:'В даному меню можна здійснити повернення чека або товарів в чеку за фіскальним номер', 
+               image:Return}
+               )
+           
+         case 6: 
+            return setInfo({
+               title:'Архів чеків',
+               text:'В даному меню можна продивитись всі чеки, також можна відкрити кожен чек окремо', 
+               image:Check}
+               )
+           
+         case 7: 
+            return setInfo({
+               title:'Робочі зміни',
+               text:'В даному меню відображені відкритті і закритті зміни касирів. Також в данному меню можна переглянути z-звіт закритих змін касира', 
+               image:Chenges}
+               )
+           
+         case 8: 
+            return setInfo({
+               title:'Товари',
+               text:'В даному меню можна створити товари або заватнтажити CSV файл із товарами', 
+               image:Goods}
+               )
+           
+         case 9: 
+            return setInfo({
+               title:'Податкові ставки',
+               text:'В данному меню налаштовуються податкові ставки. Користувачі які на єдинному податку меню податки не відображається', 
+               image:Taxes}
+               )
+           
+         case 10: 
+            return setInfo({
+               title:'Інсрукції',
+               text:'В даному меню відображені інстукція по роботі з порталом, специфікація апі,можна завантажити файли для встановлення Checkbock каса і Checkbock підпис  ' ,
+               image:Gide}
+               )
             }
    
   },[count]);
@@ -75,7 +124,7 @@ useEffect(() => {
       </Card.Text>
       <div className='BtnContainer'>
       <Button className="buttonLs" onClick={handleCountIncrement} disabled={count===0}>Назад</Button>
-      {count===4?<Link to="/portal"><Button className="buttonLs">Продивитись демо</Button></Link>:<Button className="buttonLs" onClick={handleCountDecrement}  disabled={count===4}>Далі</Button>}
+      {count===10?<Link to="/portal"><Button className="buttonLs">Продивитись демо</Button></Link>:<Button className="buttonLs" onClick={handleCountDecrement}  disabled={count===10}>Далі</Button>}
       
       </div>
     </Card.Body>
