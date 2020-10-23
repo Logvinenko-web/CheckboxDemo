@@ -1,9 +1,29 @@
+
+@font-face{
+  font-family: 'e-Ukraine';
+   src: url('./font/e-UkraineHead-Medium.ttf') format('truetype');
+ 
+}
+@font-face{
+  font-family:'e-Ukraine-Light' ;
+src: url('./font/e-Ukraine-Light.ttf') format('truetype')
+
+}
 body {
   margin: 0;
-  font-family: e-Ukraine-light,serif;
+  font-family: e-Ukraine-light,serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
  }
+ .row {
+   margin: 0 !important;
+ }
+.col {
+  padding: 0 !important;
+}
+.card-header {
+  font-family: e-Ukraine,serif; 
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -64,6 +84,7 @@ code {
  }
  .sidebar {
    padding-right: 0 !important;
+   padding-left: 0 !important;
    height: 100vh;
    background-color: rgb(30, 38, 44); 
    border-color: rgb(30, 38, 44);
@@ -73,7 +94,9 @@ code {
  .leftBar {
    background: white;
    height: auto;
- }
+   padding: 25px !important;
+
+  }
  img {
   width: 100%;
   height: auto;
@@ -84,7 +107,7 @@ code {
    padding-left: 17px;
    padding-right: 0;
    color:  #a1a4a8;
-   font-size: 15px;
+   font-size: 12px;
    min-height: 25px;
    font-weight: 500;
   }
@@ -115,3 +138,159 @@ color: white;
  .st0{
   fill: white !important;
  }
+
+ /* SALE */
+
+ .saleTitle {
+  font-family: e-Ukraine,serif; 
+  color: black;
+  font-size: 1.75em;
+  }
+ .saleContainer {
+   display: flex;
+   justify-content: space-between;
+ }
+ .support {
+   width: 200px;
+   height: 40px;
+ }
+ .btn {
+  border-radius: 12px !important;
+  border: rgb(83, 235, 202) ;
+  font-weight: 600 !important;
+  letter-spacing: .64px !important;
+ }
+ .createdReceiptConteiner {
+  padding-top: 50px;
+}
+  .buttonConteiner {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  .buttonContainerRight{
+    display: inline-block;
+ 
+  }
+  .buttonContainerLeft{
+    display: inline-block;
+  }
+ .btn-primary {
+  background: linear-gradient(247.21deg,#8ce2b0 8.73%,#04aed5 90.64%);
+  border-style: none !important;
+    height: 40px;
+  /* min-width:176px;   */
+  font-size: 14px !important;
+
+}
+.btn-add {
+  height: 24px;
+  width: 24px;
+  background: linear-gradient(247.21deg,#8ce2b0 8.73%,#04aed5 90.64%);
+}
+.btn-secondary {
+  background: white !important;
+  margin-left: 10px;
+  align-items: center;
+}
+.btn-dark {
+
+  background: white !important;
+  color:  black !important;
+}
+.btn-danger {
+  background: white !important;
+  color: #ff002b!important;
+  margin-left: 10px !important;
+  font-size: 14px !important;
+  height: 38px;
+
+  border-color: linear-gradient(85.13deg,#ff002b,#ff8a00) !important;
+}
+.btn-danger span {
+
+}
+.v-btn__content {
+  background:linear-gradient(247.21deg,#8ce2b0 8.73%,#04aed5 90.64%);
+  background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+font-size: 14px;
+}
+ .btnCheck{
+   width: 100% !important;
+   background: black !important;
+   color: white !important;
+   font-size: 12px !important;
+
+ }
+/* Input */
+ 
+.form-control {
+  background: linear-gradient(0deg,#f0f1f2,#f0f1f2),#f0f1f2 !important;
+  height: 30px !important;
+  border-radius: 12px !important;
+ }
+ .form-control:focus {
+   background: white !important;
+ }
+
+.inputGoods{
+ background: white !important;
+  height: 24px !important;
+}
+ .form-check-label {
+   color: black;
+ }
+ /* Table */
+ .table td, .table th {
+   border: none !important;
+   text-align: left;
+   font-size: 12px;
+ }
+
+ /* check */
+ .createdReceipt {
+  font-size: 12px;
+
+ }
+ .spriteBlock {
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+}
+.input-group-prepend {
+  height: 30px !important;
+
+}
+ .form-check {
+   display: flex !important;
+ }
+
+ .check {
+       position: relative;
+       font-family: Inter;
+       padding: 20px;
+       background: linear-gradient(0deg,#f0f1f2,#f0f1f2),#f0f1f2;
+       border-radius: 6px;
+       min-height: 100px;
+ }
+ .emailBlock{
+   padding-top: 30px;
+ }
+ .emailTitle {
+   padding-top: 10px;
+ }
+ /* goods */
+ .createdGoods {
+  padding-right: 20px !important;
+
+ }
+
+ /* Modal */
+
+ .modalConteiner {
+   max-width: 350px !important;
+  }

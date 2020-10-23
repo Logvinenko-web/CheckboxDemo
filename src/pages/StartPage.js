@@ -34,6 +34,8 @@ const handleCountDecrement=()=>{
      }
     }
 useEffect(() => {
+   document.title = 'Checkbox Demo';
+
     switch (count){
         case 0: 
          return setInfo({
