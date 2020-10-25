@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ButtonReport from './ButtonReport'
-import CheckReceipt from '../assets/image/checkReceipt.png'
 const ModalCreated = (props) => {
     const {
         buttonLabel,
@@ -20,7 +19,7 @@ const ModalCreated = (props) => {
             <Modal isOpen={modal} toggle={toggle} className={classModal}>
     <ModalHeader toggle={toggle}>{text}</ModalHeader>
                 <ModalBody>
-                   <img src={img} alt='Receipt'style={{heigth:'100px'}} />
+                   <img src={img} alt='Receipt'style={{heigth:'450px'}} />
                 </ModalBody>
                 <ModalFooter>
                     <ButtonReport text='Роздрукувати' classBtn='btnCheck'/>

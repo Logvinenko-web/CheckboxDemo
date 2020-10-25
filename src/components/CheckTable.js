@@ -1,8 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { useTable, columns, data } from 'react-table'
 import styled from 'styled-components'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import ButtonRegister from './ButtonRegister'
+ 
 
 const Styles = styled.div`
   /* This is required to make the table full-width */
@@ -15,7 +14,7 @@ const Styles = styled.div`
     max-width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
-    // border-bottom: 1px solid grey;
+    border-bottom: 1px solid grey;
   }
 
   table {
@@ -30,7 +29,9 @@ const Styles = styled.div`
         }
       }
     }
-     
+    tr:nth-child(2n) {
+        background: linear-gradient(0deg,#f0f1f2,#f0f1f2),#f0f1f2;;
+      }
          
         
     th,
@@ -59,38 +60,61 @@ const Styles = styled.div`
 `
 
 
-export default function ReactTable(props) {
-  const {data, setData} = props 
-  const [inputData, setInputData] = useState({ text1: '', numberIndex: '', numberPrice: "" ,button:'', amount:1})
-  const handleChange = (e) => {
-    const name = e.target.name
-    const value = e.target.value
-     setInputData(state => ({ ...state, [name]: value }))
-     console.log(inputData)
-   }
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setData([...data, inputData])
-
-  }
+export default function GoodsTablet() {
+  const data = [
+    {
+        type: 'Службова видача',
+        data: '02.10.2020 14:56:56',
+        number: 'E5tdZGYTHus',
+        price:'19.44',               
+        justDo:'...'
+    },
+    {
+        type: 'Службова видача',
+        data: '02.10.2020 14:56:56',
+        number: 'E5tdZGYTHus',
+        price:'19.44',               
+        justDo:'...'
+    },
+    {
+        type: 'Продаж',
+        data: '02.10.2020 12:56:56',
+        number: 'Lgouq9qLsVA',
+        price:'190.00',               
+        justDo:'...'
+    },
+    {
+        type: 'Службове внесення',
+        data: '02.10.2020 10:50:56',
+        number: 'SvcaOTb4mQY',
+        price:'100.47',               
+        justDo:'...'
+    },
+   
+]
  
    const columns = React.useMemo(
     () => [
       {
-        Header: 'Найменування',
-        accessor: 'text1',
+        Header: 'Тип',
+        accessor: 'type',
       },
       {
-        Header: 'Код',
-        accessor: 'numberIndex',
+        Header: 'Дата/час',
+        accessor: 'data',
       },
       {
-        Header: 'Ціна',
-        accessor: 'numberPrice',
+        Header: 'Фіскальний номер ',
+        accessor: 'number',
       },
       {
-        Header: '',
-        accessor: 'button',
+        Header: 'Сума',
+        accessor: 'price',
+      },
+      
+      {
+        Header: 'Дії',
+        accessor: 'justDo',
       },
 
     ],
@@ -107,7 +131,7 @@ export default function ReactTable(props) {
 
   return (
     <Styles>
-      <table className='tableCretedReceipt' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
+      <table className='tableKashier' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -124,34 +148,7 @@ export default function ReactTable(props) {
             </tr>
           ))}
         </thead>
-        <tbody>
-          <tr>
-
-            <td> <Input type="text" className='inputGoods'
-              name="text1" id="exampleEmail" placeholder="Ввести вручну" onChange={handleChange} /></td>
-            <td> <Input
-              className='inputGoods'
-              type="number"
-              name="numberIndex"
-              id="exampleNumber"
-              placeholder="xxxxxxx"
-              onChange={handleChange}
-
-            /></td>
-            <td> <Input
-              className='inputGoods'
-              type="number"
-              name="numberPrice"
-              id="exampleNumber"
-              placeholder="0.00₴"
-              onChange={handleChange}
-            /></td>
-            <td>
-              <ButtonRegister classButton="btn-add" onClickBtn={handleSubmit} classSpan='arrowSpan' text="→"></ButtonRegister>
-            </td>
-
-          </tr>
-        </tbody>
+        
         <tbody {...getTableBodyProps()}>
           {rows.map(row => {
             prepareRow(row)
@@ -170,7 +167,7 @@ export default function ReactTable(props) {
                           color: 'black',
                         }}
                       >
-                        {i ===3 && <ButtonRegister classButton="btn-add"  classSpan='arrowSpan' text="→"></ButtonRegister>}
+  
                         {cell.render('Cell')}
                       </td>
                     )

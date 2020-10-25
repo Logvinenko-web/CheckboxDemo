@@ -8,8 +8,9 @@ export default function ImputEmail(props) {
     <InputGroup className="mb-3 " >
     
     <FormControl  
-      placeholder="Username"
-      aria-label="Username"
+    className='emailInput'
+      placeholder="Email"
+      aria-label="email"
       aria-describedby="basic-addon1"
     />
   </InputGroup>

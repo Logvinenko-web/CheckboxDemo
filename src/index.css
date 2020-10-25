@@ -88,7 +88,7 @@ code {
    height: 100vh;
    background-color: rgb(30, 38, 44); 
    border-color: rgb(30, 38, 44);
-   min-width: 256px;
+   min-width: 225px;
    height: 100vh;
  }
  .leftBar {
@@ -114,7 +114,7 @@ code {
   .navTitle a {
     padding-left:0;
   }
-  .active{
+   .nav-item .active{
     color: white !important;
   }
  .navTitle{
@@ -169,8 +169,18 @@ color: white;
     margin-top: 50px;
   }
   .buttonContainerRight{
-    display: inline-block;
- 
+    display: flex;
+ align-items: center;
+  }
+  .balance {
+    margin-right: 15px;
+    text-align: start;
+  }
+  .balanceKass {
+    font-size: 1.5em;
+    line-height: 1;
+    font-size: 24px;
+    font-weight: 900;
   }
   .buttonContainerLeft{
     display: inline-block;
@@ -179,22 +189,27 @@ color: white;
   background: linear-gradient(247.21deg,#8ce2b0 8.73%,#04aed5 90.64%);
   border-style: none !important;
     height: 40px;
-  /* min-width:176px;   */
-  font-size: 14px !important;
+    margin-right: 10px;
+    font-size: 14px !important;
 
 }
 .btn-add {
+  position: relative;
   height: 24px;
   width: 24px;
   background: linear-gradient(247.21deg,#8ce2b0 8.73%,#04aed5 90.64%);
 }
+.arrowSpan {
+  position: absolute;
+    top: 1px;
+    left: 7px;
+}
 .btn-secondary {
   background: white !important;
-  margin-left: 10px;
   align-items: center;
 }
 .btn-dark {
-
+  margin-right: 10px;
   background: white !important;
   color:  black !important;
 }
@@ -226,18 +241,19 @@ font-size: 14px;
  }
 /* Input */
  
-.form-control {
+/* .form-control {
   background: linear-gradient(0deg,#f0f1f2,#f0f1f2),#f0f1f2 !important;
   height: 30px !important;
   border-radius: 12px !important;
- }
+ } */
  .form-control:focus {
    background: white !important;
  }
-
-.inputGoods{
+ .inputGoods{
  background: white !important;
   height: 24px !important;
+  border-radius: 8px !important;
+
 }
  .form-check-label {
    color: black;
@@ -254,6 +270,30 @@ font-size: 14px;
   font-size: 12px;
 
  }
+ .titleCheck {
+   color: black;
+   font-size: 18px;
+ }
+ .boxStar {
+  height: 10px;
+  width: 100%;
+  position: relative;
+  margin-top: 12px;
+  margin-bottom: 12px; }
+ .checkStar::before {
+  content: "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #161b25;
+  opacity: .5;
+  font-size: 14px;
+  font-feature-settings: "tnum" on,"lnum" on;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  }
+ 
  .spriteBlock {
   display: flex;
   position: absolute;
@@ -273,24 +313,200 @@ font-size: 14px;
        position: relative;
        font-family: Inter;
        padding: 20px;
+       padding-top: 5px;
        background: linear-gradient(0deg,#f0f1f2,#f0f1f2),#f0f1f2;
        border-radius: 6px;
        min-height: 100px;
  }
  .emailBlock{
    padding-top: 30px;
+   text-align: start;
  }
  .emailTitle {
    padding-top: 10px;
  }
+ .emailInput {
+   font-size: 12px !important;
+  border-radius: 10px ! ;
+ }
+ .sum {
+   display: flex;
+   font-size: 16px;
+    font-weight: 700;
+    color: #161b25;
+    justify-content: space-between;
+    padding-top: 15px;
+    flex-wrap: nowrap;
+ }
+ .sumNumber {
+   display: flex
+ }
+ .btnSum {width: 20px; height: 15px;
+border-radius: 10px;
+position: relative;
+border: none;
+outline: none;
+}
+.btnSum:focus {
+  /* border: none; */
+  outline: none;}
+.spanClose {
+  position: absolute;
+  top:-2px
+}
+.boxCount {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  min-height: 28px;
+  min-width: 50px;
+  background-color: #fff;
+  justify-content: space-between;
+  padding:5px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.increment {
+  color: #0cb1d6;
+  font-size: 14px;
+ }
+.decrement {
+  font-size: 12px;
+ 
+  color: #0cb1d6;
+}
+.goodsCheck{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.boxPrice {
+  display: flex;
+  align-items: center;
+}
+.btnSun::before {
+  content: 'x'; 
+  color: #fff;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+}
  /* goods */
  .createdGoods {
   padding-right: 20px !important;
-
+  font-size: 0.8rem!important;
+  
  }
-
+  
+ .fa-search::before {
+color: #a1a4a8   ;
+position: absolute;
+left: 7px;
+    top: 29px;
+ }
+ #exampleSearch {
+   padding-left: 25px !important;
+   font-size: 12px;
+   border-radius: 10px;
+ }
+ .tableCretedReceipt thead tr th:nth-child(1){
+width: 50% !important;
+}
+.tableCretedReceipt thead tr th:nth-child(2){
+  width: 16% !important;
+  }
+  .tableCretedReceipt thead tr th:nth-child(3){
+    width: 19% !important;
+    }
+ thead tr th {
+  color: rgba(0,0,0,.6) !important;
+ }
  /* Modal */
 
  .modalConteiner {
    max-width: 350px !important;
+   /* max-height: 300px !important; */
+  }
+
+  /* Pay */
+  .containerPay {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  .blockCash {
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    width: 60%;
+    padding-top: 7px;
+    padding-bottom: 7px;  }
+  .titleCash{
+    font-size: .7em;
+    color: #161b25;
+    opacity: .5;
+  }
+  .sumCash {
+    font-size: 1em;
+    color: #161b25;
+    opacity: .5;
+  }
+  
+  .radioPay label{
+    padding-bottom: 5px;
+    color:  rgba(0,0,0,.6) ;
+
+  }
+.dialogKashier {
+  margin: auto;
+  top: 20%;
+  right: 10%;
+  width: 800px !important;
+
+}
+/* .modal-content {
+} */
+  /* table kashier */
+  .tableKashier {
+    margin-top: 30px;
+    font-size: 12px;
+  }
+ .formKashier input {
+   border-radius: 10px ;
+  }
+ .MuiOutlinedInput-root {
+   border-radius: 10px;
+ }
+ .tableKashier thead tr th:nth-child(1){
+  width: 16% !important;
+ }
+ .tableKashier thead tr th:nth-child(2){
+  width: 29% !important;
+ }
+ .tableKashier thead tr th:nth-child(3){
+  width: 19% !important;
+ }
+ .tableKashier thead tr th:nth-child(4){
+  width: 31% !important;
+ }
+ .spanDPS {
+  background-color: rgba(255, 170, 1, 0.2);
+  border-color: rgba(255, 170, 1, 0.2);
+  color: rgb(195, 127, 0);
+  caret-color: rgb(195, 127, 0);
+  border-radius: 8px;
+    padding: 4px 7px;
+    font-size: .69rem;
+    height: 22px;
+ }
+ .MuiOutlinedInput-root {
+  border-radius: 10px !important;
+ }
+ .MuiTextField-root {
+   width: 100% !important;
+ }
+ .containerButtonDps {
+   display: flex;
+   margin-top: 50px;
+   margin-bottom: 20px;
   }

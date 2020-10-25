@@ -47,26 +47,22 @@ const receipt = {
       "good": {
         "code": "5",
         "name": "A+ Весы кухон.  с чашей",
-        "barcode": "string",
-        "header": "string",
-        "footer": "string",
+        
         "price": 16500,
         "tax": [
-          4
+          1
         ],
-        "uktzed": "3934"
+        "uktzed": "3934#"
       },
        "quantity": 3000,
-      "is_return": false
+      "is_return": true
       
     },
   {
     "good": {
       "code": "6",
       "name": "Шапка",
-      "barcode": "string",
-      "header": "string",
-      "footer": "string",
+            
       "price": 500,
       "tax": [
         4
@@ -94,7 +90,7 @@ const receipt = {
     }
   ]
   ,
-  "footer": "Служебна яинфо",
+  "footer": "Дякуємо за вибір!",
   "barcode": "4820099999"
 }
 // const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiQVBJIiwianRpIjoiZGE3NWJiYzAtMjIyOC00MmIwLTk1ZTAtM2FkOTRjOTQ5MTBmIiwic3ViIjoiNjhkYzZhN2EtMmVlZi00MjYzLWE2NGItMTc2YWI3ZGIwNzE5IiwibmJmIjoxNjAyMTM4NzQ5LCJpYXQiOjE2MDIxMzg3NDl9.TiGsb0ho6Uui3TmaXlnm65BBEn5bYVHnfsPoffOOQkA"
