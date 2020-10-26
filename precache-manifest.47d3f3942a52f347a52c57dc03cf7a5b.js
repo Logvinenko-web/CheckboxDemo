@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "597aa702739d1d03c9738d3a39a526fa",
+    "revision": "1faab91b105810bfa7465a4be71303a6",
     "url": "/CheckboxDemo/index.html"
   },
   {
-    "revision": "1914a8cbfce8fb2d83d1",
+    "revision": "8d898ffacae6f85ad019",
     "url": "/CheckboxDemo/static/css/2.2a86faee.chunk.css"
   },
   {
-    "revision": "e06440f7191b480575b2",
+    "revision": "fe2543f30e39dae492e1",
     "url": "/CheckboxDemo/static/css/main.e1e0bf7d.chunk.css"
   },
   {
-    "revision": "1914a8cbfce8fb2d83d1",
-    "url": "/CheckboxDemo/static/js/2.3d5b54c0.chunk.js"
+    "revision": "8d898ffacae6f85ad019",
+    "url": "/CheckboxDemo/static/js/2.b542b5f5.chunk.js"
   },
   {
     "revision": "48ac8ec662c878179d9a66a3836a4b97",
-    "url": "/CheckboxDemo/static/js/2.3d5b54c0.chunk.js.LICENSE.txt"
+    "url": "/CheckboxDemo/static/js/2.b542b5f5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e06440f7191b480575b2",
-    "url": "/CheckboxDemo/static/js/main.76f8b2ea.chunk.js"
+    "revision": "fe2543f30e39dae492e1",
+    "url": "/CheckboxDemo/static/js/main.6a541ce6.chunk.js"
   },
   {
     "revision": "35a42a08c5851a22705b",

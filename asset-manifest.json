@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/CheckboxDemo/static/css/main.e1e0bf7d.chunk.css",
-    "main.js": "/CheckboxDemo/static/js/main.76f8b2ea.chunk.js",
-    "main.js.map": "/CheckboxDemo/static/js/main.76f8b2ea.chunk.js.map",
+    "main.js": "/CheckboxDemo/static/js/main.6a541ce6.chunk.js",
+    "main.js.map": "/CheckboxDemo/static/js/main.6a541ce6.chunk.js.map",
     "runtime-main.js": "/CheckboxDemo/static/js/runtime-main.b5002feb.js",
     "runtime-main.js.map": "/CheckboxDemo/static/js/runtime-main.b5002feb.js.map",
     "static/css/2.2a86faee.chunk.css": "/CheckboxDemo/static/css/2.2a86faee.chunk.css",
-    "static/js/2.3d5b54c0.chunk.js": "/CheckboxDemo/static/js/2.3d5b54c0.chunk.js",
-    "static/js/2.3d5b54c0.chunk.js.map": "/CheckboxDemo/static/js/2.3d5b54c0.chunk.js.map",
+    "static/js/2.b542b5f5.chunk.js": "/CheckboxDemo/static/js/2.b542b5f5.chunk.js",
+    "static/js/2.b542b5f5.chunk.js.map": "/CheckboxDemo/static/js/2.b542b5f5.chunk.js.map",
     "index.html": "/CheckboxDemo/index.html",
-    "precache-manifest.bdaf629625e189a9d5ea6eda72b3cb8a.js": "/CheckboxDemo/precache-manifest.bdaf629625e189a9d5ea6eda72b3cb8a.js",
+    "precache-manifest.47d3f3942a52f347a52c57dc03cf7a5b.js": "/CheckboxDemo/precache-manifest.47d3f3942a52f347a52c57dc03cf7a5b.js",
     "service-worker.js": "/CheckboxDemo/service-worker.js",
     "static/css/2.2a86faee.chunk.css.map": "/CheckboxDemo/static/css/2.2a86faee.chunk.css.map",
     "static/css/main.e1e0bf7d.chunk.css.map": "/CheckboxDemo/static/css/main.e1e0bf7d.chunk.css.map",
-    "static/js/2.3d5b54c0.chunk.js.LICENSE.txt": "/CheckboxDemo/static/js/2.3d5b54c0.chunk.js.LICENSE.txt",
+    "static/js/2.b542b5f5.chunk.js.LICENSE.txt": "/CheckboxDemo/static/js/2.b542b5f5.chunk.js.LICENSE.txt",
     "static/media/Organiz.png": "/CheckboxDemo/static/media/Organiz.d3352bbd.png",
     "static/media/archivCheck.cbbc879c.svg": "/CheckboxDemo/static/media/archivCheck.cbbc879c.svg",
     "static/media/check.png": "/CheckboxDemo/static/media/check.a6e356df.png",
@@ -50,8 +50,8 @@
   "entrypoints": [
     "static/js/runtime-main.b5002feb.js",
     "static/css/2.2a86faee.chunk.css",
-    "static/js/2.3d5b54c0.chunk.js",
+    "static/js/2.b542b5f5.chunk.js",
     "static/css/main.e1e0bf7d.chunk.css",
-    "static/js/main.76f8b2ea.chunk.js"
+    "static/js/main.6a541ce6.chunk.js"
   ]
 }
