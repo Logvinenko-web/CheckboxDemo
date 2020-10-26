@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 export default function ImputFormKass({toggle}) {
   const {dataKass,setDataKass} = useContext(Context)
 
-   const [inputData, setInputData] = useState({ type: '', fiscal: '40000****', numberKass: "" ,tt:'ВОЛИНСЬКА ОБЛ., М. ЛУЦЬК, Смаколики', justDo:""})
+   const [inputData, setInputData] = useState({ type: '', fiscal: '40000****', numberKass: "" ,tt:'ВОЛИНСЬКА ОБЛ., М. ЛУЦЬК, Смаколики', justDo:"...", sendDps: false})
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -15,9 +15,12 @@ export default function ImputFormKass({toggle}) {
 
   }
   const handleSubmit = (e) => {
+    if(inputData.numberKass.length>0 ){
+
     e.preventDefault()
     setDataKass([...dataKass, inputData])
     toggle()
+    }
   }
   return (
     <Form className='formKashier'>
@@ -40,7 +43,7 @@ export default function ImputFormKass({toggle}) {
               required
               fullWidth
               id="pass"
-              label="В даному полі можна буде видрати раніше додану торгову точку"
+              label="В даному полі потрібно вказати раніше додану торгову точку"
               name="password"
               disabled
             />

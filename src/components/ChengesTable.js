@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from 'react';
-import { useTable, columns, data } from 'react-table'
+import React from 'react';
+import { useTable } from 'react-table'
 import styled from 'styled-components'
 import { green } from "@material-ui/core/colors";
 import Radio from "@material-ui/core/Radio";
 import { withStyles } from "@material-ui/core/styles";
+import Tooltip from "@material-ui/core/Tooltip";
 
 
 const Styles = styled.div`
@@ -86,7 +87,9 @@ export default function GoodsTablet() {
 
 
     ]
-
+    const add = `
+    Касира можна добаввити двома способавми: 1.Зчитати із ключа ЕЦП 2.Ввести дані вручну. Відмінність в тому що при зчитуванні з ключа ЕЦП не потрібно заповнювати поле "ідентифікатор ключа ЕЦП" - заповнюється автоматично. На тесту представлений спосіб - "Ввести дані вручну"    `
+        
     const columns = React.useMemo(
         () => [
             {
@@ -137,7 +140,7 @@ export default function GoodsTablet() {
 
     return (
         <Styles>
-            <table className='tableKashier' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start', }}>
+            <table className='tableChenges' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start', }}>
                 <thead>
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
@@ -175,12 +178,11 @@ export default function GoodsTablet() {
                                             >
 
                                                 {data.length > 0 && i === 0 ? <GreenRadio
-
                                                     disabled
                                                     checked={selectedValue === 'a'}
                                                     value="a"
                                                     name="radio-button-demo"
-                                                /> : null}
+                                                />: null}
                                                 {cell.render('Cell')}
                                             </td>
                                         )

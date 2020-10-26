@@ -2,9 +2,12 @@ import React from 'react';
 import Button from 'react-bootstrap/Button'
 
 export default function ButtonReport(props) {
-const {text, classBtn,toggle,disabled} = props
+const {text, classBtn,toggle,disabled, handlerUpdateStatus} = props
 
   return (     
-  <Button className={classBtn} variant="dark" onClick={toggle} disabled={disabled}> {text} </Button>
+  <Button className={classBtn} variant="dark" onClick={()=>{
+    // toggle();
+    handlerUpdateStatus()
+  }} disabled={disabled}> {text} </Button>
   );
 }

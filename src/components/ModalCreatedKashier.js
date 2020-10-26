@@ -1,13 +1,11 @@
 import React from 'react';
-import { Modal, ModalHeader, ModalBody } from 'reactstrap';
-import { Dialog, DialogTitle, DialogContent } from '@material-ui/core';
+ import { Dialog, DialogTitle, DialogContent } from '@material-ui/core';
 
 import InpurFormCashier from './ImputFormCashier'
 const ModalCreatedKashier = (props) => {
     const {
 
-        classModal,
-        modal,
+         modal,
         toggle,
         text,
 

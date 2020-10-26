@@ -106,7 +106,7 @@ export default function TaxesTablet({data}) {
 
   return (
     <Styles>
-      <table className='tableKashier' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
+      <table className='tableTaxes' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -142,7 +142,6 @@ export default function TaxesTablet({data}) {
                           color: 'black',
                         }}
                       >
-                        {data.length > 1 ? i ===5 && <span>...</span>:null}
  
                         {cell.render('Cell')}
                       </td>

@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { useTable, columns, data } from 'react-table'
+import React from 'react';
+import { useTable} from 'react-table'
 import styled from 'styled-components'
  
 
@@ -67,7 +67,7 @@ export default function GoodsTablet({data}) {
     () => [
       {
         Header: 'Код',
-        accessor: 'type',
+        accessor: 'code',
       },
       {
         Header: 'Найменування',
@@ -108,7 +108,7 @@ export default function GoodsTablet({data}) {
 
   return (
     <Styles>
-      <table className='tableKashier' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
+      <table className='tableGoods' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>

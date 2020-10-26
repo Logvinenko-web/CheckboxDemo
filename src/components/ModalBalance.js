@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
+import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
 
 
-const ModalBalance = ({ toggle, smShow, className,setBalanceKass,balanceKass,text,increment }) => {
+const ModalBalance = ({ toggle, smShow, className,setBalanceKass,text,increment }) => {
   
   const [inputData, setInputData] = useState(0)
    const handleChange = (e) => {

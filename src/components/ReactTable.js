@@ -1,7 +1,7 @@
-import React, { useMemo, useState } from 'react';
-import { useTable, columns, data } from 'react-table'
+import React, {  useState } from 'react';
+import { useTable } from 'react-table'
 import styled from 'styled-components'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {  Input } from 'reactstrap';
 import ButtonRegister from './ButtonRegister'
 
 const Styles = styled.div`
@@ -71,7 +71,7 @@ export default function ReactTable(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     setData([...data, inputData])
-
+    setInputData({text1: '', numberIndex: '', numberPrice: "" ,button:'', amount:1})
   }
  
    const columns = React.useMemo(
@@ -135,6 +135,7 @@ export default function ReactTable(props) {
               name="numberIndex"
               id="exampleNumber"
               placeholder="xxxxxxx"
+              value={inputData.numberIndex}
               onChange={handleChange}
 
             /></td>
@@ -170,7 +171,7 @@ export default function ReactTable(props) {
                           color: 'black',
                         }}
                       >
-                        {i ===3 && <ButtonRegister classButton="btn-add"  classSpan='arrowSpan' text="→"></ButtonRegister>}
+                        {i ===3 && <ButtonRegister classButton="btn-add" classSpan='arrowSpan' text="→"></ButtonRegister>}
                         {cell.render('Cell')}
                       </td>
                     )

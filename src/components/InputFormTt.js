@@ -31,18 +31,22 @@ export default function ImputFormKass({ toggle }) {
         type: '',
         name: '',
         adress: '',
-        justDo: ''
+        justDo: '...',
+        sendDps: false
     })
-    const handleChange = (e) => {
+     const handleChange = (e) => {
         const name = e.target.name
         const value = e.target.value
         setInputData(state => ({ ...state, [name]: value }))
 
     }
     const handleSubmit = (e) => {
+      if(inputData.name.length>0 && inputData.adress.length>0  ){
+
         e.preventDefault()
         setDataTt([...dataTt, inputData])
         toggle()
+      }
     }
     return (
         <Form className='formKashier'>
@@ -64,8 +68,7 @@ export default function ImputFormKass({ toggle }) {
           label="Вид права на торгову точку"
           value={currency}
           onChange={handleChangeSelect}
-
-           helperText="Володієте чи орендуєте"
+               helperText="Володієте чи орендуєте"
         >
           {currencies.map((option) => (
             <MenuItem key={option.value} value={option.value}>

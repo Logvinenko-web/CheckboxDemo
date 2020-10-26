@@ -266,6 +266,7 @@ font-size: 14px;
  }
 
  /* check */
+
  .createdReceipt {
   font-size: 12px;
 
@@ -420,6 +421,7 @@ width: 50% !important;
  thead tr th {
   color: rgba(0,0,0,.6) !important;
  }
+ 
  /* Modal */
 
  .modalConteiner {
@@ -471,6 +473,18 @@ width: 50% !important;
     margin-top: 30px;
     font-size: 12px;
   }
+  .tableTaxes {
+    margin-top: 30px;
+    font-size: 12px;
+  }
+  .tableChenges {
+    margin-top: 30px;
+    font-size: 12px;
+  }
+  .tableGoods {
+    margin-top: 30px;
+    font-size: 12px;
+  }
  .formKashier input {
    border-radius: 10px ;
   }
@@ -489,6 +503,10 @@ width: 50% !important;
  .tableKashier thead tr th:nth-child(4){
   width: 31% !important;
  }
+ .tableOutlet thead tr th:nth-child(3){
+  width: 50% !important;
+ }
+ 
  .spanDPS {
   background-color: rgba(255, 170, 1, 0.2);
   border-color: rgba(255, 170, 1, 0.2);
@@ -510,3 +528,15 @@ width: 50% !important;
    margin-top: 50px;
    margin-bottom: 20px;
   }
+  .MuiTooltip-tooltip {
+    font-size: 12px !important;
+  }
+  .spanCheckbox {
+    background-color:black;
+    /* border-color: rgba(255, 170, 1, 0.2); */
+    color: white;
+    /* caret-color: rgb(195, 127, 0); */
+    border-radius: 8px;
+      padding: 4px 7px;
+      font-size: .69rem;
+      height: 22px;  }

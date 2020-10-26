@@ -13,7 +13,7 @@ export default function ImputFormKass({ toggle }) {
         name: '',
         meet:'',
         code:null,        
-        justDo:''
+        justDo:'...'
     })
     const handleChange = (e) => {
         const name = e.target.name
@@ -22,9 +22,12 @@ export default function ImputFormKass({ toggle }) {
 
     }
     const handleSubmit = (e) => {
+        if(inputData.letter.length>0 && inputData.code.length>0 && inputData.tax.length>0 && inputData.name.length>0  ){
+
         e.preventDefault()
         setDataTaxes([...dataTaxes, inputData])
         toggle()
+        }
     }
     return (
         <Form className='formKashier'>

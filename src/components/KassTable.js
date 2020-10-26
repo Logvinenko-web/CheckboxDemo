@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { useTable, columns, data } from 'react-table'
+import React   from 'react';
+import { useTable} from 'react-table'
 import styled from 'styled-components'
 // import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 // import ButtonRegister from './ButtonRegister'
@@ -120,7 +120,7 @@ export default function KassTablet({data}) {
         </thead>
         
         <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
+          {rows.map((row,index) => {
             prepareRow(row)
             return (
               <>
@@ -139,6 +139,7 @@ export default function KassTablet({data}) {
                       >
                         {/* {data.length > 1 ? i ===4 && <span>...</span>:null} */}
                         {/* {data.length > 1 ? i ===0 && <span className='spanDPS'>Відправлено в ДПС</span>:null} */}
+                        {i===0 ? <span className={!data[index].sendDps?'spanDPS':'spanCheckbox'} >{!data[index].sendDps?'Відправлено в ДПС':'Каса Checkbox'}</span>:null}
 
                         {cell.render('Cell')}
                       </td>

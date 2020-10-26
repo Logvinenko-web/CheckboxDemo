@@ -4,8 +4,7 @@ import InpurFormKass from './ImputFormKass'
 const ModalCreatedKass = (props) => {
     const {
 
-        classModal,
-        modal,
+         modal,
         toggle,
         text,
 

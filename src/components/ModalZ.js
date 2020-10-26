@@ -3,7 +3,6 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ButtonReport from './ButtonReport'
 const ModalCreated = (props) => {
     const {
-        buttonLabel,
         classModal,
         modal,
         toggle,

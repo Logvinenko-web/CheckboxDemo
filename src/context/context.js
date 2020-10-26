@@ -22,7 +22,7 @@ import Img from '../assets/image/Organiz.png'
                  const[balanceKass, setBalanceKass] =useState(0)
                 const [toggleShift, setToggleShift] = useState(false)
                 const [taxes, setTaxes] = useState(false)
-
+const[totalSum,setTotalSum]= useState(0)
                
   const [data, setData] = useState( [
     {
@@ -35,59 +35,27 @@ import Img from '../assets/image/Organiz.png'
 ],
   )
   const [dataKashier, setDataKashier] = useState( [
-    {
-        type: '',
-        login: '',
-        pinCode: '',
-        pib:'',
-        justDo:''
-    }
+    
 ],
   )
   const [dataKass, setDataKass] = useState( [
-    {
-        type: '',
-        fiscal: '',
-        numberKass: '',
-        tt:'',
-        justDo:''
-    }
+   
 ],
   )
   const [dataTt, setDataTt] = useState( [
-    {
-        type: '',
-        name: '',
-        adress: '',
-        justDo:''
-    }
+   
 ],
   )
   const [dataGoods, setDataGoods] = useState( [
-    {
-        code: '',
-        name: '',
-        barcode: '',
-        price:null,
-        taxes:'',
-        uktzed: '',
-        justDo:''
-    }
+    
 ],
   )
   const [dataTaxes, setDataTaxes] = useState( [
-    {
-        letter: '',
-        tax: '',
-        name: '',
-        meet:'',
-        code:null,        
-        justDo:''
-    }
+   
 ],
   )
              return (
-                <Context.Provider value={{dataTaxes, setDataTaxes,dataGoods,taxes, setTaxes, setDataGoods,goods,setGoods,dataTt, setDataTt,tt,setTt,kass,setKass,dataKass, setDataKass,setKashier,kashier,dataKashier,setDataKashier, count,balanceKass,smShowDown,setSmShowDown, setCount,setBalanceKass,smShow,setSmShow,info,setInfo,modal,setModal,modalX, setModalX,modalZ,setModalZ, data, setData, toggleShift, setToggleShift}}>
+                <Context.Provider value={{totalSum,setTotalSum,dataTaxes, setDataTaxes,dataGoods,taxes, setTaxes, setDataGoods,goods,setGoods,dataTt, setDataTt,tt,setTt,kass,setKass,dataKass, setDataKass,setKashier,kashier,dataKashier,setDataKashier, count,balanceKass,smShowDown,setSmShowDown, setCount,setBalanceKass,smShow,setSmShow,info,setInfo,modal,setModal,modalX, setModalX,modalZ,setModalZ, data, setData, toggleShift, setToggleShift}}>
                     {props.children}
                  </ Context.Provider>
             )

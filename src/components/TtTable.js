@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { useTable, columns, data } from 'react-table'
+import React from 'react';
+import { useTable} from 'react-table'
 import styled from 'styled-components'
 // import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 // import ButtonRegister from './ButtonRegister'
@@ -87,7 +87,7 @@ export default function KassTablet({data}) {
     ],
     []
   )
-
+console.log(data,"___DATA")
   const {
     getTableProps,
     getTableBodyProps,
@@ -95,10 +95,10 @@ export default function KassTablet({data}) {
     rows,
     prepareRow,
   } = useTable({ columns, data })
-
-  return (
+  console.log(columns)
+   return (
     <Styles>
-      <table className='tableKashier' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
+      <table className='tableKashier tableOutlet' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -117,7 +117,8 @@ export default function KassTablet({data}) {
         </thead>
         
         <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
+          {rows.map((row,index) => {
+
             prepareRow(row)
             return (
               <>
@@ -127,20 +128,22 @@ export default function KassTablet({data}) {
                     return (
 
                       <td
-
+ 
                         {...cell.getCellProps()}
+
                         style={{
                           border: 'none',
                           color: 'black',
                         }}
                       >
-                        {data.length > 1 ? i ===3 && <span>...</span>:null}
-                        {data.length > 1 ? i ===0 && <span className='spanDPS'>Відправлено в ДПС</span>:null}
+                          {i===0 ? <span className={!data[index].sendDps?'spanDPS':'spanCheckbox'} >{!data[index].sendDps?'Відправлено в ДПС':'Торгова точка Checkbox'}</span>:null}
+                         {cell.render('Cell')}
 
-                        {cell.render('Cell')}
                       </td>
                     )
+                    
                   })}
+ 
                 </tr>
               </>
             )

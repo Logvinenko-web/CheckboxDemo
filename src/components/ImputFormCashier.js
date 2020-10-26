@@ -1,14 +1,13 @@
 import React, { useState ,useContext} from 'react';
-import { Form, FormGroup, Input,Label } from 'reactstrap';
+import { Form, FormGroup } from 'reactstrap';
 import { Context } from '../context/context'
-import ButtonCreated from './ButtonCreated'
-import TextField from '@material-ui/core/TextField';
+ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 export default function ImputFormCashier({toggle}) {
   const {dataKashier,setDataKashier} = useContext(Context)
 
-   const [inputData, setInputData] = useState({ type: '', login: '', pinCode: "11111111" ,pib:'', justDo:""})
+   const [inputData, setInputData] = useState({ type: '', login: '', pinCode: "11111111" ,pib:'', justDo:"..."})
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value

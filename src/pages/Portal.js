@@ -8,25 +8,20 @@ import Form from 'react-bootstrap/Form'
 import { Context } from '../context/context'
 import { useContext } from 'react';
 import ButtonDps from "../components/ButtonDps";
-
+ 
 import ButtonRegister from '../components/ButtonRegister'
 import ButtonOut from '../components/ButtonOut'
 import ButtonReport from '../components/ButtonReport'
 import InputSearch from '../components/ImputSearch'
 import InputEmail from '../components/InputEmail'
-import TableReceipt from '../components/TableReceipt'
-import TableAddGoods from '../components/TableAddGoods'
-import ModalCreated from '../components/ModalCreated'
-import ImputFormCashier from '../components/ImputFormCashier'
-import ButtonСlosingShift from '../components/ButtonСlosingShift'
+  import ModalCreated from '../components/ModalCreated'
+ import ButtonСlosingShift from '../components/ButtonСlosingShift'
 import ReceiptTitle from '../components/ReceiptTitle'
 import ReactTable from '../components/ReactTable'
 import ModalBalance from '../components/ModalBalance'
-import ButtonMaking from '../components/ButtonMaking'
-import TitleHeader from '../components/TitleHeader'
+ import TitleHeader from '../components/TitleHeader'
 import KashierTable from '../components/KashierTable'
-import ModalCreatedKashier from '../components/ModalCreatedKashier'
-import KassTable from '../components/KassTable'
+ import KassTable from '../components/KassTable'
 import TitleHeaderKass from '../components/TitleHeaderKass'
  import TitleHeaderTT from '../components/TitleHeaderTT'
  import TtTable from '../components/TtTable'
@@ -39,7 +34,7 @@ import TitleHeaderKass from '../components/TitleHeaderKass'
  import TitleHeaderChanges from '../components/TitleHeaderChanges'
  import ChengesTable from '../components/ChengesTable'
 
- 
+
 import '../index.css';
 import { ReactComponent as Sale } from '../assets/image/sael.svg'
 import { ReactComponent as ImgLogo } from '../assets/image/qwerty1.svg'
@@ -54,37 +49,30 @@ import { ReactComponent as Company } from '../assets/image/company.svg'
 import { ReactComponent as Taxes } from '../assets/image/taxes.svg'
 import { ReactComponent as Gide } from '../assets/image/gide.svg'
 import { ReactComponent as LogoCheckbox } from '../assets/image/f1be010.svg'
-import { ReactComponent as Sprite } from '../assets/image/sprite.svg'
-import CheckReceipt from '../assets/image/checkReceipt.png'
+ import CheckReceipt from '../assets/image/checkReceipt.png'
 import ZReport from '../assets/image/z-report.png'
 import XReport from '../assets/image/x-report.png'
 
 
-import SaleS from '../assets/image/saleS.png'
-import ReturS from '../assets/image/returnS.png'
-import KashierS from '../assets/image/kashierS.png'
-import SideBarLink from '../components/SideBarLink'
-import KassS from '../assets/image/kassS.png'
-import OutletS from '../assets/image/outletS.png'
-import CheckS from '../assets/image/checkS.png'
-import ChengesS from '../assets/image/changesS.png'
-import GoodsS from '../assets/image/goodsS.png'
+ import ReturS from '../assets/image/returnS.png'
+ import SideBarLink from '../components/SideBarLink'
+ 
 import CompanyS from '../assets/image/companyS.png'
-import TaxesS from '../assets/image/taxS.png'
-import GideS from '../assets/image/gideS.png'
-import SalePage from '../components/HeaderTitle'
-import HeaderTitle from '../components/HeaderTitle'
+ import GideS from '../assets/image/gideS.png'
+ import HeaderTitle from '../components/HeaderTitle'
 import SuportImg from '../assets/image/support.png'
-import ImputSearch from '../components/ImputSearch';
-import { TramOutlined } from '@material-ui/icons';
- export default function Portal() {
-  const {dataTt,dataTaxes,dataGoods,dataKass, setDataKass,dataKashier,setDataKashier,setKashier,kashier,balanceKass,setBalanceKass, modal,setSmShowDown,smShowDown, setModal, modalZ, setModalZ, modalX, setModalX, data, setData, toggleShift, setToggleShift,setSmShow,smShow } = useContext(Context)
+  export default function Portal() {
+  const {totalSum,setTotalSum,dataTt,dataTaxes,dataGoods,dataKass, setDataKass,dataKashier,setDataKashier,setKashier,kashier,balanceKass,setBalanceKass, modal,setSmShowDown,smShowDown, setModal, modalZ, setModalZ, modalX, setModalX, data, setData, toggleShift, setToggleShift,setSmShow,smShow } = useContext(Context)
   const toggle = () => setModal(!modal);
   const toggleZ = () => setModalZ(!modalZ);
   const toggleX = () => setModalX(!modalX);
   const toggleSmShow = () => setSmShow(!smShow);
   const toggleSmShowDown = () => setSmShowDown(!smShowDown)
-
+  const longText = `
+  Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim est, vel aliquam tellus.
+  Praesent non nunc mollis, fermentum neque at, semper arcu.
+  Nullam eget est sed sem iaculis gravida eget vitae justo.
+  `;
   const [radio1, setRadio] =useState(false)
   const handleRadio = () => {
   if (radio1 === false) {
@@ -157,16 +145,19 @@ import { TramOutlined } from '@material-ui/icons';
                       Каса:
                     </div>
                     <div className='balanceKass'>
-  { `${balanceKass} ₴`}
+  { `${balanceKass.toFixed(2)} ₴`}
                     </div>
                   </div>
                   < ButtonRegister  text='↑ Внести готівку'  onClickBtn={toggleSmShow} disabled={toggleShift === false}  />
 
                   <ButtonOut text='↓ Видати готівку' toggle={toggleSmShowDown} disabled={toggleShift === false}  />
                 </div>
+                
                 <div className="buttonContainerLeft">
+                
                   <ButtonReport text='x-звіт' toggle={toggleX} disabled={toggleShift === false} />
-                  {toggleShift === false ? <ButtonOut text='Відкрити зміну' toggle={handleToggle} /> : <ButtonСlosingShift text='Закрити зміну' toggleShift1={handleToggle} />}
+                  {toggleShift === false ? <ButtonOut text='Відкрити зміну' toggle={handleToggle} /> : <ButtonСlosingShift text='Закрити зміну' toggleShift1={handleToggle} /> }
+                 
                 </div>
               </div>
               <div className='createdReceiptConteiner'>
@@ -178,12 +169,13 @@ import { TramOutlined } from '@material-ui/icons';
                   </Col>
                   <Col className='createdReceipt' xs lg="4">
                     <div className='check'>
-                      <ReceiptTitle data={data} setData={setData}/>
+                      <ReceiptTitle data={data} setData={setData} totalSum={totalSum} setTotalSum={setTotalSum}/>
                     </div>
                     <div className='emailBlock'>
-                      <div className='emailTitle'>
+                       <div className='emailTitle'>
                         Відправити на емейл
                 </div>
+ 
                       <InputEmail />
                     </div>
                     <div className='containerPay'>
@@ -228,8 +220,8 @@ import { TramOutlined } from '@material-ui/icons';
               </div>
             </Tab.Pane>
             <Tab.Pane eventKey="second">
-              {/* <ImputFormCashier data={data} setData={setData} /> */}
-              {/* <TableReceipt data={data} /> */}
+            <img src={ReturS} alt='Інструкція'/>
+
             </Tab.Pane>
             <Tab.Pane eventKey="third">
             <HeaderTitle title="Касири" src={SuportImg} alt='support' />

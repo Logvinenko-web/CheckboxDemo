@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ButtonReport from './ButtonReport'
 const ModalCreated = (props) => {
     const {
-        buttonLabel,
-        classModal,
+         classModal,
         modal,
         toggle,
         text,
