@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form'
 import { Context } from '../context/context'
 import { useContext } from 'react';
 import ButtonDps from "../components/ButtonDps";
- 
+ import ButtonZvit from '../components/ButtonZvit'
 import ButtonRegister from '../components/ButtonRegister'
 import ButtonOut from '../components/ButtonOut'
 import ButtonReport from '../components/ButtonReport'
@@ -155,7 +155,7 @@ import SuportImg from '../assets/image/support.png'
                 
                 <div className="buttonContainerLeft">
                 
-                  <ButtonReport text='x-звіт' toggle={toggleX} disabled={toggleShift === false} />
+                  <ButtonZvit text='x-звіт' toggle={toggleX} disabled={toggleShift === false} />
                   {toggleShift === false ? <ButtonOut text='Відкрити зміну' toggle={handleToggle} /> : <ButtonСlosingShift text='Закрити зміну' toggleShift1={handleToggle} /> }
                  
                 </div>
@@ -214,7 +214,7 @@ import SuportImg from '../assets/image/support.png'
                       </div>}
 
                     </div>
-                    <ButtonReport classBtn='btnCheck' text='Видати чек →' toggle={toggle} disabled={toggleShift === false} />
+                    <ButtonZvit classBtn='btnCheck' text='Видати чек →' toggle={toggle} disabled={toggleShift === false} />
                   </Col>
                 </Row>
               </div>

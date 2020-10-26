@@ -6,8 +6,8 @@ const {text, classBtn,toggle,disabled, handlerUpdateStatus} = props
 
   return (     
   <Button className={classBtn} variant="dark" onClick={()=>{
-    
-    handlerUpdateStatus()
+    toggle();
+     
   }} disabled={disabled}> {text} </Button>
   );
 }
