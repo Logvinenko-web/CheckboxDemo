@@ -137,8 +137,7 @@ export default function KassTablet({data}) {
                           color: 'black',
                         }}
                       >
-                        {/* {data.length > 1 ? i ===4 && <span>...</span>:null} */}
-                        {/* {data.length > 1 ? i ===0 && <span className='spanDPS'>Відправлено в ДПС</span>:null} */}
+                        
                         {i===0 ? <span className={!data[index].sendDps?'spanDPS':'spanCheckbox'} >{!data[index].sendDps?'Відправлено в ДПС':'Каса Checkbox'}</span>:null}
 
                         {cell.render('Cell')}

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTable } from 'react-table'
 import styled from 'styled-components'
- 
+import ModalCreated from './ModalCreated'
+import CheckReceipt from '../assets/image/checkPdf.png'
 
 const Styles = styled.div`
   /* This is required to make the table full-width */
@@ -30,10 +31,9 @@ const Styles = styled.div`
       }
     }
     tr:nth-child(2n) {
-        background: linear-gradient(0deg,#f0f1f2,#f0f1f2),#f0f1f2;;
+        background: linear-gradient(0deg,#f0f1f2,#f0f1f2),#f0f1f2;
       }
-         
-        
+       
     th,
     td {
       margin: 0;
@@ -61,39 +61,53 @@ const Styles = styled.div`
 
 
 export default function GoodsTablet() {
+  const [toggle, setToggle] = useState(null)
+  const [modal, setModal] = useState(false)
+
+
+  const toggleCheck = () =>{
+    setModal(!modal)
+     setToggle(null);
+  } 
+
+  const handleViewCheck = (i) => {
+    setToggle(state =>state===i ? null : i)
+   }
+  
+
   const data = [
     {
-        type: 'Службова видача',
-        data: '02.10.2020 14:56:56',
-        number: 'E5tdZGYTHus',
-        price:'19.44',               
-        justDo:'...'
+      type: 'Службова видача',
+      data: '02.10.2020 14:56:56',
+      number: 'E5tdZGYTHus',
+      price: '19.44',
+      justDo: ''
     },
     {
-        type: 'Службова видача',
-        data: '02.10.2020 14:56:56',
-        number: 'E5tdZGYTHus',
-        price:'19.44',               
-        justDo:'...'
+      type: 'Службова видача',
+      data: '02.10.2020 14:56:56',
+      number: 'E5tdZGYTHus',
+      price: '19.44',
+      justDo: ''
     },
     {
-        type: 'Продаж',
-        data: '02.10.2020 12:56:56',
-        number: 'Lgouq9qLsVA',
-        price:'190.00',               
-        justDo:'...'
+      type: 'Продаж',
+      data: '02.10.2020 12:56:56',
+      number: 'Lgouq9qLsVA',
+      price: '190.00',
+      justDo: ''
     },
     {
-        type: 'Службове внесення',
-        data: '02.10.2020 10:50:56',
-        number: 'SvcaOTb4mQY',
-        price:'100.47',               
-        justDo:'...'
+      type: 'Службове внесення',
+      data: '02.10.2020 10:50:56',
+      number: 'SvcaOTb4mQY',
+      price: '100.47',
+      justDo: ''
     },
-   
-]
- 
-   const columns = React.useMemo(
+
+  ]
+
+  const columns = React.useMemo(
     () => [
       {
         Header: 'Тип',
@@ -111,7 +125,7 @@ export default function GoodsTablet() {
         Header: 'Сума',
         accessor: 'price',
       },
-      
+
       {
         Header: 'Дії',
         accessor: 'justDo',
@@ -130,8 +144,11 @@ export default function GoodsTablet() {
   } = useTable({ columns, data })
 
   return (
+    <>
+    <ModalCreated modal={modal} toggle={toggleCheck} classModal='modalConteiner' text='Шаблон чеку' img={CheckReceipt} />
+
     <Styles>
-      <table className='tableKashier' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
+      <table className='tableKashier' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start', }}>
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -148,9 +165,9 @@ export default function GoodsTablet() {
             </tr>
           ))}
         </thead>
-        
+
         <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
+          {rows.map((row,index) => {
             prepareRow(row)
             return (
               <>
@@ -167,7 +184,13 @@ export default function GoodsTablet() {
                           color: 'black',
                         }}
                       >
-  
+                        {i === 4  && <div className='boxJustDo' key={index}><div><button className="btnCheckView" onClick={() =>handleViewCheck(index)}><i class="fas fa-ellipsis-h"></i></button></div>
+                          {index===toggle && <div className='blockCheckView' onClick={toggleCheck}>
+                            <div  className='textJustDo'>Переглянути чек</div>
+                            <i class="far fa-eye"></i>
+                          </div>}
+                        </div>}
+
                         {cell.render('Cell')}
                       </td>
                     )
@@ -179,5 +202,6 @@ export default function GoodsTablet() {
         </tbody>
       </table>
     </Styles>
+    </>
   )
 }

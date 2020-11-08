@@ -1,7 +1,7 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { useTable } from 'react-table'
 import styled from 'styled-components'
-import {  Input } from 'reactstrap';
+import { Input } from 'reactstrap';
 import ButtonRegister from './ButtonRegister'
 
 const Styles = styled.div`
@@ -59,22 +59,39 @@ const Styles = styled.div`
 `
 
 
-export default function ReactTable(props) {
-  const {data, setData} = props 
-  const [inputData, setInputData] = useState({ text1: '', numberIndex: '', numberPrice: "" ,button:'', amount:1})
+export default function SaleTable(props) {
+  const { data, setData } = props
+  // const dataSale = [...data]
+  
+  const [inputData, setInputData] = useState({ text1: '', numberIndex: '', numberPrice: "", button: '', amount: 1 })
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
-     setInputData(state => ({ ...state, [name]: value }))
-     console.log(inputData)
-   }
+    setInputData(state => ({ ...state, [name]: value }))
+    console.log(inputData)
+  }
   const handleSubmit = (e) => {
+    console.log(e, 'eeeee')
+    console.log(inputData.text1, 'text1')
+    console.log(inputData.numberIndex, 'numberIndex')
+
+
+    if(inputData.text1.length > 0 && inputData.numberIndex.length > 0 && inputData.numberPrice.length > 0){
     e.preventDefault()
     setData([...data, inputData])
-    setInputData({text1: '', numberIndex: '', numberPrice: "" ,button:'', amount:1})
+    setInputData({ text1: '', numberIndex: '', numberPrice: "", button: '', amount: 1 })
+   }else {
+    alert('Заповніть будь ласка всі поля')
   }
- 
-   const columns = React.useMemo(
+  }
+  const handleSubmit2 = (e) => {
+     
+
+
+     e.preventDefault()
+       
+  }
+  const columns = React.useMemo(
     () => [
       {
         Header: 'Найменування',
@@ -107,12 +124,12 @@ export default function ReactTable(props) {
 
   return (
     <Styles>
-      <table className='tableCretedReceipt' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
+      <table className='tableCretedReceipt' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start', }}>
         <thead>
-          {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
-                <th
+          {headerGroups.map((headerGroup, index) => (
+            <tr key={index}{...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column,index) => (
+                <th key={index}
                   {...column.getHeaderProps()}
                   style={{
                     color: 'black'
@@ -127,8 +144,15 @@ export default function ReactTable(props) {
         <tbody>
           <tr>
 
-            <td> <Input type="text" className='inputGoods'
-              name="text1" id="exampleEmail" placeholder="Ввести вручну" onChange={handleChange} /></td>
+            <td> <Input type="text"
+              className='inputGoods'
+              name="text1"
+              id="exampleEmail"
+              value={inputData.text1}
+
+              placeholder="Ввести вручну"
+              onChange={handleChange}
+            /></td>
             <td> <Input
               className='inputGoods'
               type="number"
@@ -145,6 +169,7 @@ export default function ReactTable(props) {
               name="numberPrice"
               id="exampleNumber"
               placeholder="0.00₴"
+              value={inputData.numberPrice}
               onChange={handleChange}
             /></td>
             <td>
@@ -154,12 +179,12 @@ export default function ReactTable(props) {
           </tr>
         </tbody>
         <tbody {...getTableBodyProps()}>
-          {rows.map(row => {
+          {rows.map((row, index) => {
             prepareRow(row)
             return (
               <>
 
-                <tr {...row.getRowProps()}>
+                <tr key={index} {...row.getRowProps()}>
                   {row.cells.map((cell, i) => {
                     return (
 
@@ -171,7 +196,7 @@ export default function ReactTable(props) {
                           color: 'black',
                         }}
                       >
-                        {i ===3 && <ButtonRegister classButton="btn-add" classSpan='arrowSpan' text="→"></ButtonRegister>}
+                        {i === 3 && <ButtonRegister classButton="btn-add" onClickBtn={handleSubmit2} classSpan='arrowSpan' text="→"></ButtonRegister>}
                         {cell.render('Cell')}
                       </td>
                     )

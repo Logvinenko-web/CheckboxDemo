@@ -15,6 +15,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
  }
+ button:active, button:focus {
+  outline: none !important;
+}
+button::-moz-focus-inner {
+  border: 0 !important;
+}
+ .svgContainer {
+   display: inline-block;
+   padding-right: 6px;
+ }
  .row {
    margin: 0 !important;
  }
@@ -104,7 +114,7 @@ code {
  .navItem1 {
    display: flex;
    justify-self: start;
-   padding-left: 17px;
+   padding-left: 11px;
    padding-right: 0;
    color:  #a1a4a8;
    font-size: 12px;
@@ -118,17 +128,16 @@ code {
     color: white !important;
   }
  .navTitle{
-  font-size: 10px;
+  font-size: 9px;
   min-height: 15px;
   font-weight: 500;
-  padding-top: 5px;
-  padding-bottom: 5px;
+ 
   cursor: pointer;
  }
 .logoCheck {
 color: white;
- padding-top: 25px;
- padding-bottom: 25px;
+ padding-top: 15px;
+ padding-bottom: 15px;
 }
 .vertical {
    border-bottom: 1px solid #32363f;
@@ -156,17 +165,28 @@ color: white;
  }
  .btn {
   border-radius: 12px !important;
-  border: rgb(83, 235, 202) ;
   font-weight: 600 !important;
   letter-spacing: .64px !important;
  }
+ .MuiButton-containedPrimary {background-color: #48a1ff !important ;}
  .createdReceiptConteiner {
   padding-top: 50px;
 }
   .buttonConteiner {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 25px;
+  }
+  .textHelper {
+    margin-top: 25px;
+    text-align: left;
+    font-size: 12px;
+  }
+  .textDashbord {
+    position: absolute;
+    margin-top: 25px;
+    text-align: left;
+    font-size: 12px;
   }
   .buttonContainerRight{
     display: flex;
@@ -237,15 +257,13 @@ font-size: 14px;
    background: black !important;
    color: white !important;
    font-size: 12px !important;
-
+  height: 40px;
  }
 /* Input */
  
-/* .form-control {
-  background: linear-gradient(0deg,#f0f1f2,#f0f1f2),#f0f1f2 !important;
-  height: 30px !important;
-  border-radius: 12px !important;
- } */
+.form-control {
+  font-size: 0.75rem !important;
+ }
  .form-control:focus {
    background: white !important;
  }
@@ -350,7 +368,8 @@ outline: none;
 }
 .btnSum:focus {
   /* border: none; */
-  outline: none;}
+  outline: none;
+}
 .spanClose {
   position: absolute;
   top:-2px
@@ -359,32 +378,45 @@ outline: none;
   display: flex;
   border: 1px solid #e0e0e0;
   border-radius: 6px;
-  min-height: 28px;
-  min-width: 50px;
+   min-width: 60px;
   background-color: #fff;
-  justify-content: space-between;
+  justify-content: space-around;
   padding:5px;
   margin-right: 30px;
   cursor: pointer;
+  font-size: 12px;
+  flex: 0 0 50%;
+    max-width: 20%;
+}
+.containerPrice {
+  display: flex;
+  font-size: 14px;
+    line-height: 18px;
+    font-feature-settings: "tnum" on,"lnum" on,"zero" on;
+    color: #161b25;
+}
+.boxPrice {
+  width: 100%;
+    text-align: end;
+   font-size: 14px;
+    line-height: 18px;
+    font-feature-settings: "tnum" on,"lnum" on,"zero" on;
+    color: #161b25;
 }
 .increment {
   color: #0cb1d6;
-  font-size: 14px;
- }
+  }
 .decrement {
-  font-size: 12px;
- 
+  
   color: #0cb1d6;
 }
 .goodsCheck{
   display: flex;
-  justify-content: space-between;
   align-items: center;
+    flex: 0 0 40%;
+    max-width: 40%;
 }
-.boxPrice {
-  display: flex;
-  align-items: center;
-}
+
 .btnSun::before {
   content: 'x'; 
   color: #fff;
@@ -397,7 +429,19 @@ outline: none;
   font-size: 0.8rem!important;
   
  }
-  
+ .goodsName {
+   overflow: hidden;
+ }
+  .price {
+    font-size: 10px;
+    line-height: 16px;
+    font-feature-settings: "tnum" on,"lnum" on,"zero" on;
+    color: #161b25;
+    opacity: .5;
+  }
+  .SumPriceaCom {
+    display: inline-block;
+  }
  .fa-search::before {
 color: #a1a4a8   ;
 position: absolute;
@@ -466,8 +510,12 @@ width: 50% !important;
   width: 800px !important;
 
 }
-/* .modal-content {
-} */
+.nav-link  {
+  width: 100%;
+text-align: left !important;
+padding:0.4rem 0rem 0.4rem 0rem !important;
+}
+
   /* table kashier */
   .tableKashier {
     margin-top: 30px;
@@ -503,8 +551,60 @@ width: 50% !important;
  .tableKashier thead tr th:nth-child(4){
   width: 31% !important;
  }
+ .tableTaxes thead tr th:nth-child(1){
+  width: 15% !important;
+ }
+ .tableTaxes thead tr th:nth-child(2){
+  width: 20% !important;
+ }
+ .tableTaxes thead tr th:nth-child(3){
+  width: 25% !important;
+ }
+ .tableTaxes thead tr th:nth-child(4){
+  width: 15% !important;
+ }
+ .tableTaxes thead tr th:nth-child(5){
+  width: 15% !important;
+ }
+ .tableGoods thead tr th:nth-child(1){
+  width: 7% !important;
+ }
+ .tableGoods thead tr th:nth-child(2){
+  width: 40% !important;
+ }
+ .tableGoods thead tr th:nth-child(3){
+  width: 15% !important;
+ }
+ .tableGoods thead tr th:nth-child(4){
+  width: 10% !important;
+ }
+ .tableGoods thead tr th:nth-child(5){
+  width: 15% !important;
+ }
+ .tableGoods thead tr th:nth-child(6){
+  width: 15% !important;
+ }
+  
+ .tableChenges thead tr th:nth-child(1){
+  width: 7% !important;
+ }
+ .tableChenges thead tr th:nth-child(2){
+  width: 20% !important;
+ }
+ .tableChenges thead tr th:nth-child(3){
+  width: 15% !important;
+ }
+ .tableChenges thead tr th:nth-child(4){
+  width: 10% !important;
+ }
+ .tableChenges thead tr th:nth-child(5){
+  width: 15% !important;
+ }
+ .tableChenges thead tr th:nth-child(6){
+  width: 15% !important;
+ }
  .tableOutlet thead tr th:nth-child(3){
-  width: 50% !important;
+  width: 52% !important;
  }
  
  .spanDPS {
@@ -521,7 +621,10 @@ width: 50% !important;
   border-radius: 10px !important;
  }
  .MuiTextField-root {
-   width: 100% !important;
+   min-width: 450px !important;
+ }
+ .kassSelect {
+  padding-bottom: 20px !important;
  }
  .containerButtonDps {
    display: flex;
@@ -540,3 +643,112 @@ width: 50% !important;
       padding: 4px 7px;
       font-size: .69rem;
       height: 22px;  }
+      .containerReturn {
+        display: flex;
+align-items: center;  
+justify-content: space-between;    }
+.form-group {
+  width: 99%;
+}
+.btn-search {
+  margin-left: 20px;
+}
+.MuiOutlinedInput-input {
+  height: 0.9em !important;
+}
+.returnTitle {
+  text-align: left;
+  font-weight: 700!important;
+  font-size: 15px;
+}
+.btn-returnContainer {
+  margin-top: 40px;
+  text-align: right;
+  
+}
+.btn-return {
+  
+  color: white !important;
+  background: #48a1ff !important;
+  border-radius: 10px !important;
+}
+/* .btn-return :checked {
+} */
+.boxReturn {
+  margin-top: 50px;
+}
+.btnCheckView {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background: inherit;
+}
+.btnCheckView:hover {
+  background: linear-gradient(1deg,#dbdada,#f0f1f2),#7c7c7c;
+}
+.fa-ellipsis-h:before {
+   opacity: 0.6;
+}
+
+.boxJustDo {
+  position: relative;
+}
+/* .boxJustDo::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: 11px;
+  border: 4px solid transparent;
+  border-left: 7px solid white;
+
+} */
+.textJustDo {
+  padding: 8px 0px 8px 8px;
+}
+.blockCheckView {
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+width: 160px;
+background: white;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  position: absolute;
+  top: -2px;
+  right: 20px;
+  cursor: pointer;
+ }
+.fa-eye {
+  padding-right: 8px;
+}
+
+.authKashier {
+  padding-bottom: 30px;
+}
+.authKass {
+  padding-bottom: 30px;
+
+}
+.MuiDialog-paperWidthSm {
+  border-radius: 10px !important;
+}
+label {
+  display: block;
+  padding-left: 16px;
+  /* position is not required */
+}
+.btnAuth {
+  text-align: center;
+  margin-bottom: 30px;
+}
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
+.inputCash {
+  text-align: center;
+  border: none;
+  color: black;
+}
+
+

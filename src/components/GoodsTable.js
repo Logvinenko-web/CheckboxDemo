@@ -83,7 +83,7 @@ export default function GoodsTablet({data}) {
       },
       {
         Header: 'Податкова група',
-        accessor: 'texes',
+        accessor: 'taxes',
       },
       {
         Header: 'УКТзЕД',
@@ -144,8 +144,7 @@ export default function GoodsTablet({data}) {
                           color: 'black',
                         }}
                       >
-                        {data.length > 1 ? i ===6 && <span>...</span>:null}
- 
+  
                         {cell.render('Cell')}
                       </td>
                     )

@@ -16,18 +16,7 @@ const TitleHeaderChenges = ({ text }) => {
 
                 <div className="buttonContainerRight">
                     <InputSearchSem />
-                    {/* <KeyboardDatePicker
-                        disableToolbar
-                        variant="inline"
-                        format="MM/dd/yyyy"
-                        margin="normal"
-                        id="date-picker-inline"
-                        label="Date picker inline"
-                        value={selectedDate}
-                        onChange={handleDateChange}
-                        KeyboardButtonProps={{
-                            'aria-label': 'change date',
-                        }} */}
+                
                                    </div>
                 <div className="buttonContainerLeft">
                 </div>

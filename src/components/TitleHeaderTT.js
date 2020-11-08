@@ -18,8 +18,7 @@ const newData = dataTt.map(item=>(
 ))
 setDataTt(newData )
      }
-     console.log(dataTt,'newData')
-      const longText = `
+       const longText = `
      Потрібно оновити дані для зміни типу торгової точки із Відправлено в ДПС на Торгова точка Checkbox, або для оновленнях даних із ДПС
      `
     return (

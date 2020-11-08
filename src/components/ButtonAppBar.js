@@ -41,56 +41,53 @@ const offlineReceipt = {
 }
 const receipt = {
   "cashier_name": "ДЖома ДЖома ДЖомоа",
-  "departament": "ПрАТ 'Літак'",
+  "departament": "ПрАТ 'Літак",
   "goods": [
     {
       "good": {
         "code": "5",
         "name": "A+ Весы кухон.  с чашей",
-        
-        "price": 16500,
+       
+        "price":16500,
         "tax": [
           1
         ],
-        "uktzed": "3934#"
+        "uktzed": "3934№"
       },
-       "quantity": 3000,
+      "quantity": 3000,
       "is_return": true
-      
-    },
-  {
-    "good": {
-      "code": "6",
-      "name": "Шапка",
-            
-      "price": 500,
-      "tax": [
-        4
-      ],
-     },
-     "quantity": 10000,
-    "is_return": false
-    
-  }
-  ],
      
-      
-  
+    },
+{
+      "good": {
+        "code": "6",
+        "name": "Шапка",
+       
+        "price":500,
+        "tax": [
+          4
+        ],
+        "uktzed": "3934№"
+      },
+      "quantity": 10000,
+      "is_return": true
+     
+    }
+  ],
   "delivery": {
     "email": "user@example.com"
   },
   "discounts": [
-    
+   
   ],
   "payments": [
     {
       "type": "CASH",
-      "value": 4950000,
-      "label": "string"
+      "value": 54500,
+      "label": "Готівка"
     }
-  ]
-  ,
-  "footer": "Дякуємо за вибір!",
+  ],
+   "footer": "Дякуємо за вибір!",
   "barcode": "4820099999"
 }
 // const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiQVBJIiwianRpIjoiZGE3NWJiYzAtMjIyOC00MmIwLTk1ZTAtM2FkOTRjOTQ5MTBmIiwic3ViIjoiNjhkYzZhN2EtMmVlZi00MjYzLWE2NGItMTc2YWI3ZGIwNzE5IiwibmJmIjoxNjAyMTM4NzQ5LCJpYXQiOjE2MDIxMzg3NDl9.TiGsb0ho6Uui3TmaXlnm65BBEn5bYVHnfsPoffOOQkA"

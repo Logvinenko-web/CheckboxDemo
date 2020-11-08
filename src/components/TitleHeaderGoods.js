@@ -6,10 +6,10 @@ import { Context } from '../context/context'
 import InputSearchSem from './InputSearchSem'
 import Tooltip from "@material-ui/core/Tooltip";
 
-const TitleHeaderGoods = ({text}) => {
-    const {goods,setGoods} = useContext(Context)
-     const toggleGoods = () => setGoods(!goods)
-     const longText = `
+const TitleHeaderGoods = ({ text }) => {
+    const { goods, setGoods } = useContext(Context)
+    const toggleGoods = () => setGoods(!goods)
+    const longText = `
      Імпорт нових товарів з csv файлу
      Код (артикул) - обов\`язкове;
      Найменування - обов\`язкове;
@@ -22,21 +22,21 @@ const TitleHeaderGoods = ({text}) => {
 
     return (
         <>
-             < ModalCreatedGoods modal={goods} toggle={toggleGoods} text='Додати торгову точку' data={goods} setData={setGoods} classModal="dialogKashier"/>
+            < ModalCreatedGoods modal={goods} toggle={toggleGoods} text='Додати товар' data={goods} setData={setGoods} classModal="dialogKashier" />
 
             <div className="buttonConteiner">
 
                 <div className="buttonContainerRight">
-                    < ButtonRegister text={text} onClickBtn={toggleGoods}/>
-                   
+                    < ButtonRegister text={text} onClickBtn={toggleGoods} />
+
                     <Tooltip title={longText}>
-                    <div>
-                    <ButtonReport text='Імпортувати з csv файлу' />
-                    </div>
+                        <div>
+                            <ButtonReport text='Імпортувати з csv файлу' />
+                        </div>
                     </ Tooltip>
                 </div>
                 <div className="buttonContainerLeft">
-                <InputSearchSem />
+                    <InputSearchSem />
                 </div>
             </div>
         </>

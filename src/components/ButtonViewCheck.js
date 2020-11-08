@@ -1,13 +1,14 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button'
 
-export default function ButtonReport(props) {
-const {text, classBtn,disabled, handlerUpdateStatus} = props
+export default function ButtonViewCheck(props) {
+const {text, classBtn,toggle,disabled,totalSum,setBalanceKass} = props
 
   return (     
   <Button className={classBtn} variant="dark" onClick={()=>{
+    setBalanceKass(state => state + totalSum)
+    toggle();
     
-    handlerUpdateStatus()
   }} disabled={disabled}> {text} </Button>
   );
-}
+} 

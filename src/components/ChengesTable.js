@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTable } from 'react-table'
 import styled from 'styled-components'
 import { green } from "@material-ui/core/colors";
 import Radio from "@material-ui/core/Radio";
 import { withStyles } from "@material-ui/core/styles";
-import Tooltip from "@material-ui/core/Tooltip";
 
-
+import ModalCreated from './ModalCreated'
+import Z_Report from '../assets/image/z-report.png'
 const Styles = styled.div`
   /* This is required to make the table full-width */
   display: block;
@@ -78,18 +78,37 @@ export default function GoodsTablet() {
             status: '',
             outlet: 'Смаколики',
             kashier: 'Бухгалтер Петрівна',
-            number: '1',
+            number: '2',
             open: '14.09.2020 12:06:03',
             close: '-',
             price: '20',
             justDo: ''
         },
+        {
+            status: '',
+            outlet: 'Смаколики',
+            kashier: 'Бухгалтер Петрівна',
+            number: '1',
+            open: '13.09.2020 09:06:03',
+            close: '13.09.2020 18:01:13',
+            price: '120',
+            justDo: ''
+        }
 
 
     ]
-    const add = `
-    Касира можна добаввити двома способавми: 1.Зчитати із ключа ЕЦП 2.Ввести дані вручну. Відмінність в тому що при зчитуванні з ключа ЕЦП не потрібно заповнювати поле "ідентифікатор ключа ЕЦП" - заповнюється автоматично. На тесту представлений спосіб - "Ввести дані вручну"    `
-        
+    const [toggle, setToggle] = useState(null)
+    const [modal, setModal] = useState(false)
+
+
+    const toggleCheck = () => {
+        setModal(!modal)
+        setToggle(null);
+    }
+
+    const handleViewCheck = (i) => {
+        setToggle(state => state === i ? null : i)
+    }
     const columns = React.useMemo(
         () => [
             {
@@ -128,7 +147,7 @@ export default function GoodsTablet() {
         ],
         []
     )
-    const [selectedValue, setSelectedValue] = React.useState('a');
+    const [selectedValue] = React.useState('a');
 
     const {
         getTableProps,
@@ -139,60 +158,79 @@ export default function GoodsTablet() {
     } = useTable({ columns, data })
 
     return (
-        <Styles>
-            <table className='tableChenges' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start', }}>
-                <thead>
-                    {headerGroups.map(headerGroup => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {headerGroup.headers.map(column => (
-                                <th
-                                    {...column.getHeaderProps()}
-                                    style={{
-                                        color: 'black'
-                                    }}
-                                >
-                                    {column.render('Header')}
-                                </th>
-                            ))}
-                        </tr>
-                    ))}
-                </thead>
+        <>
+            <ModalCreated modal={modal} toggle={toggleCheck} classModal='modalConteiner' text='Шаблон z-звіту' img={Z_Report} />
 
-                <tbody {...getTableBodyProps()}>
-                    {rows.map(row => {
-                        prepareRow(row)
-                        return (
-                            <>
+            <Styles>
+                <table className='tableChenges' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start', }}>
+                    <thead>
+                        {headerGroups.map(headerGroup => (
+                            <tr {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map(column => (
+                                    <th
+                                        {...column.getHeaderProps()}
+                                        style={{
+                                            color: 'black'
+                                        }}
+                                    >
+                                        {column.render('Header')}
+                                    </th>
+                                ))}
+                            </tr>
+                        ))}
+                    </thead>
 
-                                <tr {...row.getRowProps()}>
-                                    {row.cells.map((cell, i) => {
-                                        return (
+                    <tbody {...getTableBodyProps()}>
+                        {rows.map((row, index) => {
+                            prepareRow(row)
+                            return (
+                                <>
 
-                                            <td
+                                    <tr {...row.getRowProps()}>
+                                        {row.cells.map((cell, i) => {
+                                            return (
 
-                                                {...cell.getCellProps()}
-                                                style={{
-                                                    border: 'none',
-                                                    color: 'black',
-                                                }}
-                                            >
+                                                <td
 
-                                                {data.length > 0 && i === 0 ? <GreenRadio
-                                                    disabled
-                                                    checked={selectedValue === 'a'}
-                                                    value="a"
-                                                    name="radio-button-demo"
-                                                />: null}
-                                                {cell.render('Cell')}
-                                            </td>
-                                        )
-                                    })}
-                                </tr>
-                            </>
-                        )
-                    })}
-                </tbody>
-            </table>
-        </Styles>
+                                                    {...cell.getCellProps()}
+                                                    style={{
+                                                        border: 'none',
+                                                        color: 'black',
+                                                    }}
+                                                >
+
+                                                    {i === 0 && index === 0 && <GreenRadio
+                                                        disabled
+                                                        checked={selectedValue === 'a'}
+                                                        value="a"
+                                                        name="radio-button-demo"
+                                                    />}
+                                                    {i === 0 && index === 1 && <Radio
+                                                        disabled
+                                                        checked={selectedValue === 'a'}
+                                                        value="a"
+                                                        name="radio-button-demo"
+                                                        color="default"
+
+                                                    />}
+                                                    {i === 7 && index===1 && <div className='boxJustDo' key={index}><div><button className="btnCheckView" onClick={() => handleViewCheck(index)}><i class="fas fa-ellipsis-h"></i></button></div>
+                                                        {index === toggle && <div className='blockCheckView' onClick={toggleCheck}>
+                                                            <div className='textJustDo'>Переглянути z-звіт</div>
+                                                            <i class="far fa-eye"></i>
+                                                        </div>}
+                                                    </div>}
+                                                    {cell.render('Cell')}
+                                                </td>
+
+                                            )
+                                        })}
+                                    </tr>
+                                </>
+                            )
+                        })}
+                    </tbody>
+                </table>
+            </Styles>
+        </>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTable, columns, data } from 'react-table'
+import { useTable } from 'react-table'
 import styled from 'styled-components'
  
 const Styles = styled.div`

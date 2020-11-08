@@ -10,7 +10,7 @@ const TitleHeaderTT = ({ text }) => {
 
     return (
         <>
-            < ModalCreatedTaxes modal={taxes} toggle={toggleTaxes} text='Додати торгову точку' data={taxes} setData={setTaxes} classModal="dialogKashier" />
+            < ModalCreatedTaxes modal={taxes} toggle={toggleTaxes} text='Додати податкову ставку' data={taxes} setData={setTaxes} classModal="dialogKashier" />
 
             <div className="buttonConteiner">
 

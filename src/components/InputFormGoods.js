@@ -3,10 +3,12 @@ import { Form, FormGroup } from 'reactstrap';
 import { Context } from '../context/context'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
- 
-export default function ImputFormKass({ toggle }) {
-    const { dataGoods, setDataGoods } = useContext(Context)
+import MenuItem from '@material-ui/core/MenuItem';
 
+export default function ImputFormKass({ toggle }) {
+
+
+    const { dataGoods, setDataGoods, dataTaxes } = useContext(Context)
     const [inputData, setInputData] = useState({
         code: '',
         name: '',
@@ -14,8 +16,15 @@ export default function ImputFormKass({ toggle }) {
         price: null,
         taxes: '',
         uktzed: '',
-        justDo: ''
+        justDo: '...'
     })
+    //  const handleChangeSelect = (e) => {
+    //     const name = e.target.name
+    //     const value = e.target.value
+    //     setInputData(state => ({ ...state, [name]: value }))
+    // };
+
+
     const handleChange = (e) => {
         const name = e.target.name
         const value = e.target.value
@@ -71,17 +80,24 @@ export default function ImputFormKass({ toggle }) {
                     name="barcode"
                     onChange={handleChange}
                 />
-                <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="taxes"
-                    label="Податкова група"
-                    name="taxes"
-                    disabled
 
-                />
+                <TextField
+                    id="taxes"
+                    select
+                    label="Податкова група"
+                    variant="outlined"
+                    name="taxes"
+                    fullWidth
+                    value={inputData.taxes}
+                    onChange={handleChange}
+                >
+                    {dataTaxes.map((option, index) => (
+                        <MenuItem key={index} value={option.code}>
+                            {option.letter}  {option.tax}   {option.name}
+                        </MenuItem>
+
+                    ))}
+                </TextField>
                 <TextField
                     variant="outlined"
                     margin="normal"

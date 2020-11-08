@@ -5,6 +5,6 @@ export default function ButtonOut(props) {
 const {text, toggle, disabled} = props
 
   return (     
-  <Button  variant="secondary"><span className='v-btn__content' onClick={toggle} disabled={disabled}>{text}</span></Button>
+  <Button  variant="secondary" disabled={disabled} onClick={toggle}><span className='v-btn__content'   >{text}</span></Button>
   );
 }

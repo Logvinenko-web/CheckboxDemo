@@ -12,7 +12,7 @@ export default function ImputFormKass({ toggle }) {
         tax: '',
         name: '',
         meet:'',
-        code:null,        
+        code:"",        
         justDo:'...'
     })
     const handleChange = (e) => {
@@ -22,7 +22,7 @@ export default function ImputFormKass({ toggle }) {
 
     }
     const handleSubmit = (e) => {
-        if(inputData.letter.length>0 && inputData.code.length>0 && inputData.tax.length>0 && inputData.name.length>0  ){
+        if(inputData.letter.length>0 ){
 
         e.preventDefault()
         setDataTaxes([...dataTaxes, inputData])
@@ -81,7 +81,8 @@ export default function ImputFormKass({ toggle }) {
                     id="code"
                     label="Код податку"
                     name="code"
-                    disabled
+                    onChange={handleChange}
+
 
                 />
                 
