@@ -61,36 +61,48 @@ const Styles = styled.div`
 
 export default function SaleTable(props) {
   const { data, setData } = props
-  // const dataSale = [...data]
-  
-  const [inputData, setInputData] = useState({ text1: '', numberIndex: '', numberPrice: "", button: '', amount: 1 })
+   
+  const [inputData, setInputData] = useState({ text1: '', numberIndex: '', numberPrice: "", button: '', amount: 1,show:true })
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
     setInputData(state => ({ ...state, [name]: value }))
-    console.log(inputData)
-  }
+   }
   const handleSubmit = (e) => {
-    console.log(e, 'eeeee')
-    console.log(inputData.text1, 'text1')
-    console.log(inputData.numberIndex, 'numberIndex')
+    
 
 
-    if(inputData.text1.length > 0 && inputData.numberIndex.length > 0 && inputData.numberPrice.length > 0){
-    e.preventDefault()
+    if(inputData.text1.length > 0 && inputData.numberIndex.length > 0 && inputData.numberPrice.length > 0 && inputData.numberIndex >= 0 && inputData.numberPrice > 0){
+       e.preventDefault()
     setData([...data, inputData])
-    setInputData({ text1: '', numberIndex: '', numberPrice: "", button: '', amount: 1 })
+    setInputData({ text1: '', numberIndex: '', numberPrice: "", button: '', amount: 1, show:true})
    }else {
     alert('Заповніть будь ласка всі поля')
   }
   }
-  const handleSubmit2 = (e) => {
+  const handleSubmitRepit = (name) => { 
      
+     const newData = data.map((item) => {
+      if (name.text1 === item.text1 && item.show===true) {
+         return {
+            ...item,
+            amount: item.amount + 1,
+            
+         }
 
+    }
+      if (name.text1 === item.text1) {
+          return {
+              ...item,
+              show: true,
+           }
 
-     e.preventDefault()
-       
-  }
+      }
+    
+      return item
+  })
+  setData(newData)
+    }
   const columns = React.useMemo(
     () => [
       {
@@ -181,7 +193,7 @@ export default function SaleTable(props) {
         <tbody {...getTableBodyProps()}>
           {rows.map((row, index) => {
             prepareRow(row)
-            return (
+             return (
               <>
 
                 <tr key={index} {...row.getRowProps()}>
@@ -196,7 +208,8 @@ export default function SaleTable(props) {
                           color: 'black',
                         }}
                       >
-                        {i === 3 && <ButtonRegister classButton="btn-add" onClickBtn={handleSubmit2} classSpan='arrowSpan' text="→"></ButtonRegister>}
+                 
+                        {i === 3 && <ButtonRegister classButton="btn-add" onClickBtn={()=>handleSubmitRepit(row.original)} classSpan='arrowSpan' text="→"></ButtonRegister>}
                         {cell.render('Cell')}
                       </td>
                     )

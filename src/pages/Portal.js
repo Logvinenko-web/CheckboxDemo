@@ -33,7 +33,9 @@ import CheckTable from '../components/CheckTable'
 import TitleHeaderChanges from '../components/TitleHeaderChanges'
 import ChengesTable from '../components/ChengesTable'
 import ReturnContainer from '../components/ReturnContainer'
-import Button from '@material-ui/core/Button';
+import ReportPeriodContainer from '../components/ReportPeriodContainer'
+
+ import Button from '@material-ui/core/Button';
 
 
 import ModalAuth from '../components/ModalAuth'
@@ -100,8 +102,7 @@ export default function Portal() {
       setToggleShift(false)
       toggleZ()
     }
-    console.log(toggleShift)
-  }
+   }
   return (
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
@@ -134,7 +135,7 @@ export default function Portal() {
           <Tab.Content>
             <Tab.Pane eventKey="first">
               <>
-              <span role="img" aria-label="xxxxx" className='textDashbord'>💡 Це головний екран порталу. Тут є коротка аналітика у вигляді графіка
+              <span role="img" aria-label="xxxxx" className='textDashbord textHelper'>💡 Це головний екран порталу. Тут є коротка аналітика у вигляді графіка
 </span>
                 <img src={Dashbord} alt='Дашборд' />
               </>
@@ -146,6 +147,7 @@ export default function Portal() {
 
               <ModalCreated modal={modalX} toggle={toggleX} classModal='modalConteiner' text='Шаблон x-звіту' img={XReport} />
               <ModalCreated modal={modalReturn} toggle={toggleReturn} classModal='modalConteiner' text='Шаблон чеку повернення' img={ReturnCkeck} />
+              
               < ModalBalance smShow={smShow} toggle={toggleSmShow} setSmShow={setSmShow} balanceKass={balanceKass} setBalanceKass={setBalanceKass} text='Внеcти готівку' increment={true} />
               < ModalBalance smShow={smShowDown} toggle={toggleSmShowDown} setSmShow={setSmShowDown} balanceKass={balanceKass} setBalanceKass={setBalanceKass} text='Видати готівку' decrement={true} />
 
@@ -315,16 +317,17 @@ export default function Portal() {
               <img src={GideS} alt='Інструкція' />
             </Tab.Pane>
             <Tab.Pane eventKey="twelve">
-              <HeaderTitle title="Моя Організація" src={SuportImg} alt='support' />
+              <HeaderTitle title="Моя Організація" src={SuportImg} alt='support' classBlock='textHelperBlock'/>
               <ButtonDps text='Синхронізувати дані з ДПС' />
               <img src={CompanyS} alt='Компанія' style={{ height: 'auto' }} />
 
             </Tab.Pane>
             <Tab.Pane eventKey="thirteen">
-            <HeaderTitle title="Звіти" src={SuportImg} alt='support' />
+            <HeaderTitle title="Звіти" src={SuportImg} alt='support' text='💡 На цій сторінці можна сформувати періодичний звіт.Натисніть "Створити звіт" щоб сформувати періодичний звіт'/>
+            <ReportPeriodContainer />
             </Tab.Pane>
             <Tab.Pane eventKey="fourteen">
-            <HeaderTitle title="Оплата" src={SuportImg} alt='support' />
+            <HeaderTitle title="Оплата" src={SuportImg} alt='support' classBlock='textHelperBlock'/>
               <img src={Pay} alt='Оплата' />
             </Tab.Pane>
           </Tab.Content>

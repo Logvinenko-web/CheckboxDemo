@@ -87,16 +87,14 @@ export default function KassTablet({data}) {
     ],
     []
   )
-console.log(data,"___DATA")
-  const {
+   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
     prepareRow,
   } = useTable({ columns, data })
-  console.log(columns)
-   return (
+    return (
     <Styles>
       <table className='tableKashier tableOutlet' {...getTableProps()} style={{ border: 'none', width: '100%', textAlign: 'start' ,}}>
         <thead>

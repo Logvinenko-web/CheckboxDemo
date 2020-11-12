@@ -18,8 +18,7 @@ const TitleHeaderKass = ({text}) => {
         ))
         setDataKass(newData )
              }
-             console.log(dataKass, "<-----dataKass")
-     const longText = `
+      const longText = `
      Після додавання каси через 3-5 хв потрібно оновити дані для зміни типу каси із Відправлено в ДПС на Каса Checkbox, або для оновленнях даних із ДПС
      `
     return (

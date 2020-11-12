@@ -181,6 +181,20 @@ color: white;
     margin-top: 25px;
     text-align: left;
     font-size: 12px;
+    border: 1px solid;
+    border-image-source: linear-gradient(90deg, rgba(202,16,142,0.9923319669664741) 0%, rgba(209,58,92,0.7682423311121324) 43%, rgba(255,0,78,1) 100%);
+    border-image-slice: 1;    
+    display: inline-block;
+    padding: 7px;
+  }
+  .textHelperBlock {
+    display: none;
+  }
+  .containerTextHelper {
+    display: flex;
+    align-items: flex-start;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);   
+
   }
   .textDashbord {
     position: absolute;
@@ -750,5 +764,18 @@ label {
   border: none;
   color: black;
 }
-
-
+.conteinrerPeriod {
+  max-width: 350px;
+  text-align: left;
+  min-height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content:space-between
+ }
+.titlePeriod{
+  margin-top: 30px;
+ 
+ font-family: e-Ukraine-light,serif;
+ line-height: 1.5;
+ color: rgba(0,0,0,.77)
+ }

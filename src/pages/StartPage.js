@@ -26,8 +26,7 @@ const handleCountDecrement=()=>{
     if (count<=9){
         setCount(count+1)
     }
-    console.log(count)
- }
+  }
  const handleCountIncrement=()=>{
      if(count>0){
         setCount(count-1)

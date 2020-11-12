@@ -2,7 +2,7 @@ import React from 'react';
  
 
 export default function HeaderTitle(props) {
-const {title, src, alt,text} = props
+const {title, src, alt,text,classBlock} = props
 
   return (
      <>
@@ -11,7 +11,7 @@ const {title, src, alt,text} = props
       <div className='support' > <img src={src} 
             alt={alt} /> </div> 
     </div>
-    <div className='textHelper'>{text}</div>
+    <div className={classBlock}><div className='containerTextHelper'><div className='textHelper'>{text}</div></div></div>
     </>
   );
 }

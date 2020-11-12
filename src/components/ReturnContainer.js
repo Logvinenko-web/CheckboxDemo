@@ -126,8 +126,7 @@ export default function ReturnContainer() {
                                     id="outlined-adornment"
                                     value='1'
                                     aria-describedby="outlined-weight-helper-text"
-
-                                    labelWidth={0}
+                                     labelWidth={0}
                                 />
                             </td>
                             <td>

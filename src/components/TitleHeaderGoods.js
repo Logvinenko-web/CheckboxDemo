@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import ButtonRegister from './ButtonRegister'
-import ButtonReport from './ButtonReport';
+import ButtonCsv from './ButtonCsv';
 import ModalCreatedGoods from './ModalCreatedGoods'
 import { Context } from '../context/context'
 import InputSearchSem from './InputSearchSem'
@@ -31,7 +31,7 @@ const TitleHeaderGoods = ({ text }) => {
 
                     <Tooltip title={longText}>
                         <div>
-                            <ButtonReport text='Імпортувати з csv файлу' />
+                            <ButtonCsv text='Імпортувати з csv файлу' />
                         </div>
                     </ Tooltip>
                 </div>

@@ -21,8 +21,7 @@ export default function ImputFormCashier({toggle}) {
     toggle()
    }
     
-    console.log(inputData)
-  }
+   }
   return (
     <Form className='formKashier'>
       <FormGroup>

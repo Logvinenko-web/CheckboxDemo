@@ -15,8 +15,7 @@ export default function ImputFormKass({ toggle }) {
     setInputData(state => ({ ...state, [name]: value }))
 
   }
-  console.log(dataTt, '<----dataTT')
-  const handleSubmit = (e) => {
+   const handleSubmit = (e) => {
     if (inputData.numberKass.length > 0) {
 
       e.preventDefault()
@@ -51,8 +50,8 @@ export default function ImputFormKass({ toggle }) {
           onChange={handleChange}
         >
           {dataTt.map((option, index) => (
-            <MenuItem key={index} value={option.adress} >
-              {option.adress}
+            <MenuItem key={index} value={option.name} >
+              {option.name}, {option.adress}
             </MenuItem>
 
           ))}

@@ -19,7 +19,7 @@ import Img from '../assets/image/Organiz.png'
                 const [tt,setTt] = useState(false);
                 const [goods,setGoods] = useState(false);
                 const [auth,setAuth] = useState(false);
-
+                const [ period, setPeriod ] = useState(false);
                 
                  const[balanceKass, setBalanceKass] =useState(0)
                 const [toggleShift, setToggleShift] = useState(false)
@@ -35,7 +35,8 @@ const[totalSum,setTotalSum]= useState(0)
         numberIndex: '1',
         numberPrice: '20000.00',
         total:0,
-        amount:1
+        amount:1,
+        show: true
     }
 ],
   )
@@ -45,7 +46,7 @@ const[totalSum,setTotalSum]= useState(0)
 ],
   )
   const [dataKass, setDataKass] = useState( [
-   {id:'',type: '', fiscal: '40000****', numberKass: "1" ,tt:'IВАНО-ФРАНКIВСЬКА ОБЛ., М. ІВАНО-ФРАНКІВСЬК, вул.Тичини,2', justDo:"...", sendDps: true}
+   {id:'',type: '', fiscal: '40000****', numberKass: "1" ,tt:'Смаколики', justDo:"...", sendDps: true}
 ],
   )
   const [dataTt, setDataTt] = useState( [
@@ -80,7 +81,7 @@ const[totalSum,setTotalSum]= useState(0)
 ],
   )
              return (
-                <Context.Provider value={{auth,setAuth,modalReturn, setModalReturn,totalSum,setTotalSum,dataTaxes, setDataTaxes,dataGoods,taxes, setTaxes, setDataGoods,goods,setGoods,dataTt, setDataTt,tt,setTt,kass,setKass,dataKass, setDataKass,setKashier,kashier,dataKashier,setDataKashier, count,balanceKass,smShowDown,setSmShowDown, setCount,setBalanceKass,smShow,setSmShow,info,setInfo,modal,setModal,modalX, setModalX,modalZ,setModalZ, data, setData, toggleShift, setToggleShift}}>
+                <Context.Provider value={{ period, setPeriod ,auth,setAuth,modalReturn, setModalReturn,totalSum,setTotalSum,dataTaxes, setDataTaxes,dataGoods,taxes, setTaxes, setDataGoods,goods,setGoods,dataTt, setDataTt,tt,setTt,kass,setKass,dataKass, setDataKass,setKashier,kashier,dataKashier,setDataKashier, count,balanceKass,smShowDown,setSmShowDown, setCount,setBalanceKass,smShow,setSmShow,info,setInfo,modal,setModal,modalX, setModalX,modalZ,setModalZ, data, setData, toggleShift, setToggleShift}}>
                     {props.children}
                  </ Context.Provider>
             )

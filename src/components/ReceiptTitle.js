@@ -1,23 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 export default function ReceiptTitle({ data, setData, setTotalSum, totalSum }) {
-    const [delatedGoodsItem, setDelatedGoodsItem] = useState([])
-
+ 
     const handleDelate = (name) => {
-        setDelatedGoodsItem((state) => [
-            ...state,
-            name
-        ])
+        const newData = data.map((item) => {
+            if (name === item.text1) {
+                return {
+                    ...item,
+                    show: false,
+                    amount:1
+                 }
+      
+            }
+
+            return item
+        })
+        setData(newData)
     }
-    let filterData = () => {
-        return data.filter(item => !delatedGoodsItem.includes(item.text1))
+    const handleDelateAll = () => {
+        const newData = data.map((item) => {
+             
+                return {
+                    ...item,
+                    show: false,
+                    amount:1
+                 }
+      
+             
+
+         })
+        setData(newData)
+    }
+     let filterData = () => {
+ 
+        return data.filter(item => item.show)
     }
     useEffect(() => {
         let filterData = () => {
-            return data.filter(item => !delatedGoodsItem.includes(item.text1))
+            return data.filter(item =>  item.show)
         } 
         setTotalSum(filterData().map(item => parseFloat(item.numberPrice) * item.amount).reduce((a, b) => (+a) + parseFloat(b), 0))
-    }, [delatedGoodsItem, data,setTotalSum])
+    }, [ data,setTotalSum])
     
     const handleDecrement = (name) => {
         const newData = data.map((item) => {
@@ -97,7 +120,7 @@ export default function ReceiptTitle({ data, setData, setTotalSum, totalSum }) {
                 <div className='sumNumber'>
                     <div className='sumNamber'>{totalSum}</div>
                     <div className='grn'><span className="curr-symbol">₴</span></div>
-                    <button className='btnSum'><span className='spanClose'>x</span></button>
+                    <button className='btnSum' onClick={handleDelateAll}><span className='spanClose'>x</span></button>
                 </div>
 
             </div>

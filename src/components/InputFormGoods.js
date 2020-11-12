@@ -32,9 +32,11 @@ export default function ImputFormKass({ toggle }) {
 
     }
     const handleSubmit = (e) => {
-        e.preventDefault()
-        setDataGoods([...dataGoods, inputData])
-        toggle()
+        if (inputData.code.length > 0 && inputData.name.length > 0 && inputData.price.length > 0) {
+            e.preventDefault()
+            setDataGoods([...dataGoods, inputData])
+            toggle()
+        }
     }
     return (
         <Form className='formKashier'>

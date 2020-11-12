@@ -18,8 +18,7 @@ const TitleHeader = ({ text }) => {
         ))
         setDataKashier(newData )
              }
-             console.log(dataKashier, "<-----dataKashier")
-
+ 
     const longText = `
     Після додавання касира через 3-5хв потрібно оновити дані для зміни типу касира із Відправлено в ДПС на Касир Checkbox, або для оновленнях даних із ДПС
     `
